@@ -1,4 +1,3 @@
-import { BottomOrnament, TopOrnament } from "@/components/Ornaments";
 import {
   CelebrateWithUs,
   HolyMatrimony,
@@ -25,9 +24,6 @@ const HomeContent = ({ name }: { name?: string }) => {
       pb={[24, 32]}
       gap={[6, 10]}
     >
-      <TopOrnament />
-      <BottomOrnament />
-
       <Header />
       <CelebrateWithUs />
       <HolyMatrimony />

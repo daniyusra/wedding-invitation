@@ -6,7 +6,7 @@ const theme = extendTheme({
       // styles for the `body`
       body: {
         bg: "blackAlpha.100",
-        color: "#262262",
+        color: "black",
       },
     },
   },

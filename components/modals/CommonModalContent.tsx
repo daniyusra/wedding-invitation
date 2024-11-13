@@ -1,14 +1,16 @@
-import { Image, ModalContent, StackProps, VStack } from "@chakra-ui/react";
-import { BottomOrnament, TopOrnament } from "../Ornaments";
+import { ModalContent, StackProps, VStack } from "@chakra-ui/react";
+import { EnvelopeOrnament } from "../Ornaments";
 
 type CommonModalContentProps = {
   children?: React.ReactNode;
   backButton?: React.ReactElement;
+  isOpen?: boolean;
 } & StackProps;
 
 const CommonModalContent = ({
   children,
   backButton,
+  isOpen,
   ...props
 }: CommonModalContentProps) => {
   return (
@@ -16,21 +18,19 @@ const CommonModalContent = ({
       h="100vh"
       justifyContent={"center"}
       alignItems={"center"}
-      bg="blackAlpha.100"
+      bg="#aad400ff"
     >
       <VStack
         maxW={"lg"}
         w={"full"}
-        h="full"
+        h="100%"
         position={"relative"}
-        bg="white"
-        shadow={"lg"}
+        bg="#aad400ff"
         gap={0}
       >
-        <TopOrnament />
-        <BottomOrnament />
+        <EnvelopeOrnament isOpen={isOpen}/>
         {backButton}
-        <VStack position={"relative"} zIndex={1} h="full" {...props}>
+        <VStack position={"relative"} zIndex={1} h="60%" w="65%" {...props}>
           {children}
         </VStack>
       </VStack>
