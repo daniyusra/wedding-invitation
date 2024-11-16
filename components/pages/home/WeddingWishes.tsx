@@ -18,6 +18,9 @@ type WeddingWishesProps = {
 } & StackProps;
 
 const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
+  const POST_URL = process.env.NEXT_PUBLIC_WEDDING_WISHES_POST as string;
+  const GET_URL = process.env.NEXT_PUBLIC_WEDDING_WISHES_GET as string;
+
   const toast = useToast();
 
   const [name, setName] = useState<string>(displayName || "");
@@ -33,7 +36,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
 
   useEffect(() => {
     Papa.parse(
-      "https://docs.google.com/spreadsheets/d/1l2-Z12GPgk6iRrQyXnrDzXYC5XELzHJi_XbyHnshYrw/pub?output=csv",
+      GET_URL,
       {
         download: true,
         header: true,
@@ -49,7 +52,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
     const body = new FormData(formRef.current!);
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbx_OxjIUFc65jDR12ZNpgy-YgR24OaIVXry-Y17wAiuxO2DfwrEEBHy1irwOsfk4xNo/exec",
+      POST_URL,
       { method: "POST", body }
     )
       .then(() => {
