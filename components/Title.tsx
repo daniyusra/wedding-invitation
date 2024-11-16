@@ -1,7 +1,5 @@
+import { coustard } from "@/utils/theme";
 import { Text, TextProps } from "@chakra-ui/react";
-import { Cormorant } from "next/font/google";
-
-const cormorant = Cormorant({ weight: "600", subsets: ["latin"] });
 
 const Title = ({
   children,
@@ -10,9 +8,8 @@ const Title = ({
   return (
     <Text
       as="h1"
-      fontFamily={cormorant.style.fontFamily}
+      fontFamily={coustard.style.fontFamily}
       fontSize={["2xl", "3xl"]}
-      casing={"uppercase"}
       textAlign={"center"}
       letterSpacing={2}
       whiteSpace={"pre-line"}
@@ -23,4 +20,4 @@ const Title = ({
   );
 };
 
-export { Title };
+export { Title};
