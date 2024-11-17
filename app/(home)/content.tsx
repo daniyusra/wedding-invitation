@@ -1,12 +1,12 @@
 import {
-  CelebrateWithUs,
   HolyMatrimony,
   WeddingReception,
   OurEpicJourney,
   Blessing,
   HappinessCollection,
   Footer,
-  Header,
+  HeaderZD,
+  GuestName,
 } from "@/components/pages/home";
 import { WeddingWishes } from "@/components/pages/home/WeddingWishes";
 import { VStack } from "@chakra-ui/react";
@@ -17,15 +17,15 @@ const HomeContent = ({ name }: { name?: string }) => {
       maxW={"lg"}
       w={"full"}
       h={"full"}
-      bg={"white"}
+      bg={"#183641"}
       shadow={"lg"}
       position={"relative"}
-      pt={[20, 28]}
-      pb={[24, 32]}
-      gap={[6, 10]}
+      /*pt={[20, 28]}*/
+      /*pb={[24, 32]}*/
+      gap={8}
     >
-      <Header />
-      <CelebrateWithUs />
+      <HeaderZD />
+      <GuestName />
       <HolyMatrimony />
       <WeddingReception />
       <OurEpicJourney />
