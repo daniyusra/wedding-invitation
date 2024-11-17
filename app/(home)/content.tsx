@@ -1,5 +1,4 @@
 import {
-  HolyMatrimony,
   WeddingReception,
   OurEpicJourney,
   Blessing,
@@ -7,6 +6,7 @@ import {
   Footer,
   HeaderZD,
   GuestName,
+  LandingPage,
 } from "@/components/pages/home";
 import { WeddingWishes } from "@/components/pages/home/WeddingWishes";
 import { VStack } from "@chakra-ui/react";
@@ -26,7 +26,7 @@ const HomeContent = ({ name }: { name?: string }) => {
     >
       <HeaderZD />
       <GuestName />
-      <HolyMatrimony />
+      <LandingPage />
       <WeddingReception />
       <OurEpicJourney />
       <HappinessCollection />

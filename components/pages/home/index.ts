@@ -6,6 +6,6 @@ export * from "./OurEpicJourney";
 export * from "./WeddingReception";
 export * from "./HappinessCollection";
 export * from "./Footer";
-export * from "./Header";
 export * from "./HeaderZD";
 export * from "./GuestName";
+export * from "./LandingPage";

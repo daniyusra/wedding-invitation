@@ -1,0 +1,119 @@
+/* index.css or your custom CSS file */
+@font-face {
+    font-family: 'NewSpiritBoldItalic';
+    src: url('/fonts/New Spirit Bold Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'NewSpiritBold';
+    src: url('/fonts/New Spirit Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'NewSpiritLightCondensedItalic';
+    src: url('/fonts/New Spirit Light Condensed Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'NewSpiritLightCondensed';
+    src: url('/fonts/New Spirit Light Condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'NewSpiritLightItalic';
+    src: url('/fonts/New Spirit Light Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'NewSpiritLight';
+    src: url('/fonts/New Spirit Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'NewSpiritMediumCondensedItalic';
+    src: url('/fonts/New Spirit Medium Condensed Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'NewSpiritMediumCondensed';
+    src: url('/fonts/New Spirit Medium Condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'NewSpiritMediumItalic';
+    src: url('/fonts/New Spirit Medium Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'NewSpiritMedium';
+    src: url('/fonts/New Spirit Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'NewSpiritRegularCondensedItalic';
+    src: url('/fonts/New Spirit Regular Condensed Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'NewSpiritRegularCondensed';
+    src: url('/fonts/New Spirit Regular Condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'NewSpiritRegularItalic';
+    src: url('/fonts/New Spirit Regular Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'NewSpiritRegular';
+    src: url('/fonts/New Spirit Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'NewSpiritSemiBoldCondensed';
+    src: url('/fonts/New Spirit SemiBold Condensed.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'NewSpiritSemiBoldItalic';
+    src: url('/fonts/New Spirit SemiBold Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'NewSpiritSemiBold';
+    src: url('/fonts/New Spirit SemiBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
