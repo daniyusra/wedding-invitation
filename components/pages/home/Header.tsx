@@ -19,22 +19,22 @@ const Header = ({ ...stackProps }: StackProps) => {
         px={2}
         whiteSpace={"pre-line"}
       >
-        {`“Love never gives up, never loses faith, is always hopeful and endures through every circumstance.”
-          - Corinthians 13:7 -`}
+        {`“And one of His signs is that He created for you spouses from among yourselves so that you may find comfort in them. And He has placed between you compassion and mercy. Surely in this are signs for people who reflect.”
+          - Ar-Rum 30:21 -`}
       </Text>
       <ProfileImage
         src="kristianto.jpg?alt=media&token=f34c6966-b600-4164-86e5-9755c23a3117"
-        name="Kristianto 陈俊辉"
-        desc="The son of Mr. Amran & Mrs. Sucyati (+)"
+        name="Zafira Binta Feliandra"
+        desc="The daughter of Mr. Ferroza & Mrs. Fithri"
         linkedIn="christiantochen"
-        instagram="christianto_chen"
+        instagram="zafirabinta"
       />
       <ProfileImage
         src="stephanie.jpg?alt=media&token=04ffcedd-1f00-42c5-98b1-9262b18b34e3"
-        name="Stephanie 林友爱"
-        desc="The daughter of Mr. Liem Swie Lin & Mrs. Tan Fei Tjin"
+        name="Muhammad Danial Yusra"
+        desc="The son of Mr. Yusuf & Mrs. Rosida"
         linkedIn="stephanieai"
-        instagram="stephanie_aiai"
+        instagram="daniyusra"
       />
     </VStackTransition>
   );
