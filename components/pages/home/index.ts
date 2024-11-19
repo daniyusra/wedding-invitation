@@ -9,3 +9,4 @@ export * from "./Footer";
 export * from "./HeaderZD";
 export * from "./GuestName";
 export * from "./LandingPage";
+export * from "./Surah";
