@@ -13,7 +13,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { Title } from "@/components/Title";
-import { coustard } from "@/utils/theme";
 
 type WeddingWishesProps = {
   displayName?: string;
@@ -122,7 +121,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
           focusBorderColor="#BBBE33"
           borderColor="#BBBE33"
           _placeholder={{color:"#a2a374"}}
-          fontFamily={coustard.style.fontFamily}
+          fontFamily={"NewSpiritRegular"}
         />
         <Box hidden>
           <Select
@@ -172,12 +171,12 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
               fontSize={"sm"}
               fontWeight={"light"}
               color="#183641"
-              fontFamily={coustard.style.fontFamily}
+              fontFamily={"NewSpiritRegular"}
               mb={1}
             >
               {d.wishes}
             </Text>
-            <Text w="full" fontWeight={700} fontSize={"sm"} align={"right"} color={"#DD5D36"} fontFamily={coustard.style.fontFamily}>
+            <Text w="full" fontWeight={700} fontSize={"sm"} align={"right"} color={"#DD5D36"} fontFamily={"NewSpiritRegular"}>
               {d.name}
             </Text>
           </VStack>

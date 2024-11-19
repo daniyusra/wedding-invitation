@@ -1,4 +1,3 @@
-import { coustard } from "@/utils/theme";
 import { Text, TextProps } from "@chakra-ui/react";
 
 const Title = ({
@@ -8,7 +7,7 @@ const Title = ({
   return (
     <Text
       as="h1"
-      fontFamily={coustard.style.fontFamily}
+      fontFamily={"NewSpiritBold"}
       fontSize={["2xl", "3xl"]}
       textAlign={"center"}
       letterSpacing={2}
