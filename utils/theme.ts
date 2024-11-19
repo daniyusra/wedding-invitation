@@ -1,4 +1,4 @@
-import { StyleFunctionProps, Textarea, extendTheme } from "@chakra-ui/react";
+import { StyleFunctionProps, extendTheme } from "@chakra-ui/react";
 import { Coustard } from "next/font/google";
 
 const coustardBlack = Coustard({ weight: "900", subsets: ["latin"] });
@@ -38,4 +38,4 @@ const theme = extendTheme({
   },
 });
 
-export {theme, coustard, coustardBlack};
+export {theme};
