@@ -1,7 +1,11 @@
 import { Box, Text, StackProps } from "@chakra-ui/react";
 import 'components/index.css';
 
-const GuestName = ({ ...stackProps }: StackProps) => {
+type NamedStackProps = {
+  name?: string;
+} & StackProps;
+
+const GuestName = ({ name, ...stackProps }: NamedStackProps) => {
   return (
     <Box
       bg="#385a41"
@@ -14,7 +18,7 @@ const GuestName = ({ ...stackProps }: StackProps) => {
     >
       <Text textAlign="center" fontSize="30px" color="white">
         <span style={{ fontFamily: "NewSpiritLight" }}>Wahai </span>
-        <span style={{ fontFamily: "NewSpiritBoldItalic" }}>Sandha,</span>
+        <span style={{ fontFamily: "NewSpiritBoldItalic" }}>{name}</span>
         <br />
         <span style={{ 
             fontSize: "25px", 

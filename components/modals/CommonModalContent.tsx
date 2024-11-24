@@ -11,6 +11,7 @@ const CommonModalContent = ({
   children,
   backButton,
   isOpen,
+  onClick,
   ...props
 }: CommonModalContentProps) => {
   return (
@@ -27,8 +28,9 @@ const CommonModalContent = ({
         position={"relative"}
         bg="#aad400ff"
         gap={0}
+        onClick={onClick}
       >
-        <EnvelopeOrnament isOpen={isOpen}/>
+        <EnvelopeOrnament isOpen={isOpen} />
         {backButton}
         <VStack position={"relative"} zIndex={1} h="60%" w="65%" {...props}>
           {children}
