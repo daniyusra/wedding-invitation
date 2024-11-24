@@ -7,6 +7,7 @@ import {
   HeaderZD,
   GuestName,
   LandingPage,
+  Surah
 } from "@/components/pages/home";
 import { WeddingWishes } from "@/components/pages/home/WeddingWishes";
 import { VStack } from "@chakra-ui/react";
@@ -27,7 +28,7 @@ const HomeContent = ({ name, shortName }: { name?: string; shortName?: string; }
       <HeaderZD />
       <GuestName name={shortName}/>
       <LandingPage />
-      <WeddingReception />
+      <Surah />
       <OurEpicJourney />
       <HappinessCollection />
       <WeddingWishes displayName={name} />
