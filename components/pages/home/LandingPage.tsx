@@ -11,9 +11,6 @@ const LandingPage = ({ ...stackProps }: StackProps) => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      backgroundImage="/background_10p.png"
-      backgroundSize="cover"
-      backgroundPosition="center"
     >
       <Text textAlign="center" fontSize="55px" color="#183641">
         <span style={{ 
