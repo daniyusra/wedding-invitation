@@ -1,4 +1,8 @@
 import { StyleFunctionProps, extendTheme } from "@chakra-ui/react";
+import { Coustard } from "next/font/google";
+
+const coustardBlack = Coustard({ weight: "900", subsets: ["latin"] });
+const coustard = Coustard({ weight: "400", subsets: ["latin"] });
 
 const theme = extendTheme({
   styles: {
@@ -18,6 +22,7 @@ const theme = extendTheme({
           px: 6,
           fontWeight: 400,
           fontSize: "md",
+          fontFamily: coustard.style.fontFamily,
           bg: props.colorMode === "dark" ? "#50657F" : "#50657F",
           color: props.colorMode === "dark" ? "white" : "white",
           _hover: {
@@ -27,6 +32,9 @@ const theme = extendTheme({
         }),
       },
     },
+    Alert: {
+      fontFamily: coustard.style.fontFamily,
+    }
   },
 });
 
