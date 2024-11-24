@@ -15,13 +15,13 @@ const getDisplayName = ({
 
   if (!gender || gender === "c") return to;
 
-  let target = to?.split("&")[0]?.trim();
+  let target = to?.split("-")[0]?.trim();
 
   if (nicknameOnly){
     target = target.split(" ")[0];
   }
 
-  let partnerName = to?.split("&")[1]?.trim();
+  let partnerName = to?.split("-")[1]?.trim();
 
   if (gender === "f") {
     target = `${married ? "Mrs." : "Ms."} ${target}`;
