@@ -10,3 +10,4 @@ export * from "./HeaderZD";
 export * from "./GuestName";
 export * from "./LandingPage";
 export * from "./TimePlace";
+export * from "./Surah";

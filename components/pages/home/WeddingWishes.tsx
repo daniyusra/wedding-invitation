@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import Papa from "papaparse";
 import { VStackTransition } from "@/components/VStackTransition";
 import {
+  Box,
   Button,
   Input,
   Select,
@@ -18,6 +19,9 @@ type WeddingWishesProps = {
 } & StackProps;
 
 const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
+  const POST_URL = process.env.NEXT_PUBLIC_WEDDING_WISHES_POST as string;
+  const GET_URL = process.env.NEXT_PUBLIC_WEDDING_WISHES_GET as string;
+
   const toast = useToast();
 
   const [name, setName] = useState<string>(displayName || "");
@@ -33,14 +37,14 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
 
   useEffect(() => {
     Papa.parse(
-      "https://docs.google.com/spreadsheets/d/1l2-Z12GPgk6iRrQyXnrDzXYC5XELzHJi_XbyHnshYrw/pub?output=csv",
+      GET_URL,
       {
         download: true,
         header: true,
         complete: ({ data }: { data: any[] }) => setData(data.reverse()),
       }
     );
-  }, []);
+  }, [GET_URL]);
 
   const onFormSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -49,14 +53,14 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
     const body = new FormData(formRef.current!);
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbx_OxjIUFc65jDR12ZNpgy-YgR24OaIVXry-Y17wAiuxO2DfwrEEBHy1irwOsfk4xNo/exec",
+      POST_URL,
       { method: "POST", body }
     )
       .then(() => {
         setLoading(false);
         formRef.current?.reset();
         toast({
-          description: "Thank You for your wishes!",
+          description: "Thank you for your wishes!",
           status: "success",
           isClosable: true,
           duration: 2500,
@@ -82,19 +86,19 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
   };
 
   return (
-    <VStackTransition gap={[6, 10]} zIndex={1} {...stackProps}>
-      <Title>{`Wedding Wishes`}</Title>
-      <Text textAlign={"center"} w="sm" px={2}>
-        Your wishes are our blessing to start a new awesome journey ahead!
-      </Text>
+    <VStackTransition gap={[3, 5]} zIndex={1} {...stackProps}>
       <VStack
         as="form"
         justifyContent={"center"}
         alignItems={"center"}
         ref={formRef}
         onSubmit={onFormSubmit}
+        backgroundColor={"#385A41"}
         gap={2}
+        padding={5}
+        borderRadius={10}
       >
+        <Title color={"white"}>{`Say your blessings!`}</Title> 
         <Input
           name="name"
           placeholder="Name"
@@ -104,64 +108,76 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
           onChange={(e) => setName(e.target.value)}
           required
           autoComplete={"on"}
-        />
+          hidden
+        />       
         <Textarea
           name="wishes"
-          placeholder="Type your wishes"
-          w={[80, 96]}
+          placeholder={"Type your wishes for us, " + name}
           required
+          w={[80, 96]}
           autoComplete={"off"}
+          variant={"flushed"}
+          color="#BBBE33"
+          focusBorderColor="#BBBE33"
+          borderColor="#BBBE33"
+          _placeholder={{color:"#a2a374"}}
+          fontFamily={"NewSpiritRegular"}
         />
-        <Select
-          name="attending"
-          w={[80, 96]}
-          required
-          value={attend}
-          onChange={(e) => {
-            setAttend(e.target.value);
-
-            if (e.target.value === "0") {
-              setTotal("");
-            }
-          }}
-        >
-          <option disabled value="">
-            Will you attend the wedding ?
-          </option>
-          <option value="1">Yes, i will gladly attend</option>
-          <option value="0">{`No, I can't attend the wedding`}</option>
-        </Select>
-        {attend === "1" && (
+        <Box hidden>
           <Select
-            name="total"
-            required
-            value={total}
-            onChange={(e) => setTotal(e.target.value)}
+            name="attending"
+            w={[80, 96]}
+            value={attend}
+            onChange={(e) => {
+              setAttend(e.target.value);
+
+              if (e.target.value === "0") {
+                setTotal("");
+              }
+            }}
           >
             <option disabled value="">
-              How many guests ?
+              Will you attend the wedding ?
             </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
+            <option value="1">Yes, i will gladly attend</option>
+            <option value="0">{`No, I can't attend the wedding`}</option>
           </Select>
-        )}
-        <Button type="submit" isLoading={loading} mt="8">
+          {attend === "1" && (
+            <Select
+              name="total"
+              value={total}
+              onChange={(e) => setTotal(e.target.value)}
+            >
+              <option disabled value="">
+                How many guests ?
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </Select>
+          )}
+        </Box>
+        <Button type="submit" isLoading={loading} mt="3" alignSelf={"end"} backgroundColor="#DD5D36">
           {loading ? "Sending..." : "Send"}
         </Button>
       </VStack>
       <VStack w={[80, 96]} h={[80, 96]} overflowY={"scroll"} gap={4}>
         {data?.map((d: any, i) => (
-          <VStack key={i} gap={1} w="full">
-            <Text w="full" fontWeight={700} fontSize={"sm"}>
-              {d.name}
-            </Text>
+          <VStack key={i} gap={1} w="full"backgroundColor={"#FFFFFF"}
+          padding={5}
+          borderRadius={10}>
             <Text
               w="full"
               textAlign={"justify"}
               fontSize={"sm"}
               fontWeight={"light"}
+              color="#183641"
+              fontFamily={"NewSpiritRegular"}
+              mb={1}
             >
               {d.wishes}
+            </Text>
+            <Text w="full" fontWeight={700} fontSize={"sm"} align={"right"} color={"#DD5D36"} fontFamily={"NewSpiritRegular"}>
+              {d.name}
             </Text>
           </VStack>
         ))}

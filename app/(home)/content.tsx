@@ -7,12 +7,13 @@ import {
   HeaderZD,
   GuestName,
   LandingPage,
-  TimePlace
+  TimePlace,
+  Surah
 } from "@/components/pages/home";
 import { WeddingWishes } from "@/components/pages/home/WeddingWishes";
 import { VStack } from "@chakra-ui/react";
 
-const HomeContent = ({ name }: { name?: string }) => {
+const HomeContent = ({ name, shortName }: { name?: string; shortName?: string; }) => {
   return (
     <VStack
       maxW={"lg"}
@@ -26,8 +27,9 @@ const HomeContent = ({ name }: { name?: string }) => {
       gap={8}
     >
       <HeaderZD />
-      <GuestName />
+      <GuestName name={shortName}/>
       <LandingPage />
+      <Surah />
       <TimePlace />
       <OurEpicJourney />
       <HappinessCollection />

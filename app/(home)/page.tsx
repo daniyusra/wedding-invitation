@@ -26,6 +26,7 @@ const HomePage = () => {
   const query = useSearchParams();
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [name, setName] = useState<string | undefined>(getCookie("name"));
+  const [shortName, setShortName] = useState<string | undefined>(getCookie("shortName"));
 
   const cookieOptions = useMemo(
     () => ({
@@ -44,11 +45,17 @@ const HomePage = () => {
     const gender = query.get("g")?.toLowerCase();
     const married = query.get("m") === "1";
     const hasPartner = query.get("p") === "1";
-    const displayName = getDisplayName({ to, gender, married, hasPartner });
+    const displayName = getDisplayName({ to, gender, married, hasPartner, nicknameOnly: false});
+    const displayShortName = getDisplayName({ to, gender, married, hasPartner, nicknameOnly: true});
 
     if (displayName) {
       setName(displayName);
       setCookie("name", displayName, cookieOptions);
+    }
+
+    if (displayShortName) {
+      setShortName(displayShortName);
+      setCookie("shortName", displayShortName, cookieOptions);
     }
   }, [query, cookieOptions]);
 
@@ -63,7 +70,7 @@ const HomePage = () => {
   return (
     <VStack minH="100vh" justifyContent={"center"} gap={0} overflowX={"hidden"}>
       <InvitationModal isOpen={isOpen} onClose={onClose} name={name} />
-      <HomeContent name={name} />
+      <HomeContent name={name} shortName={shortName}/>
     </VStack>
   );
 };
