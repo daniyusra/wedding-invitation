@@ -3,17 +3,24 @@ const getDisplayName = ({
   gender,
   married,
   hasPartner,
+  nicknameOnly
 }: {
   to: string | null;
   gender: string | undefined;
   married: boolean;
   hasPartner: boolean;
+  nicknameOnly: boolean | undefined;
 }) => {
   if (!to) return undefined;
 
   if (!gender || gender === "c") return to;
 
   let target = to?.split("&")[0]?.trim();
+
+  if (nicknameOnly){
+    target = target.split(" ")[0];
+  }
+
   let partnerName = to?.split("&")[1]?.trim();
 
   if (gender === "f") {
