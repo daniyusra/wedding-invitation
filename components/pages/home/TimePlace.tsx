@@ -6,10 +6,10 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
     <Box
       bg="#bcbe33"
       w="90%"
-      h="550px"
+      h="530px"
       borderRadius="20px"
-      backgroundImage="/location_bg.png" 
-      backgroundSize="105%" 
+      backgroundImage="/mg5.png" 
+      backgroundSize="100%" 
       backgroundPosition="center"
       //display="flex"
       //justifyContent="center"
@@ -53,7 +53,7 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
             fontFamily: "NewSpiritLight",
             fontSize: '25px',
             display: 'inline-block',
-            marginBottom: '50px'
+            marginBottom: '65px'
         }}>Cijantung, Jakarta Timur</span>
         <br />
         <span
