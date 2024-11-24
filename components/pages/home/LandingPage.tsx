@@ -1,5 +1,6 @@
 import { Box, Text, StackProps } from "@chakra-ui/react";
 import 'components/index.css';
+import  background from "/public/background_undangan.png";
 
 const LandingPage = ({ ...stackProps }: StackProps) => {
   return (
@@ -11,6 +12,9 @@ const LandingPage = ({ ...stackProps }: StackProps) => {
       display="flex"
       justifyContent="center"
       alignItems="center"
+      backgroundImage="/background.png" 
+      backgroundSize="100%" 
+      backgroundPosition="center"
     >
       <Text textAlign="center" fontSize="55px" color="#183641">
         <span style={{ 
