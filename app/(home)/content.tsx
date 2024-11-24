@@ -7,6 +7,7 @@ import {
   HeaderZD,
   GuestName,
   LandingPage,
+  TimePlace,
   Surah
 } from "@/components/pages/home";
 import { WeddingWishes } from "@/components/pages/home/WeddingWishes";
@@ -29,6 +30,7 @@ const HomeContent = ({ name, shortName }: { name?: string; shortName?: string; }
       <GuestName name={shortName}/>
       <LandingPage />
       <Surah />
+      <TimePlace />
       <OurEpicJourney />
       <HappinessCollection />
       <WeddingWishes displayName={name} />
