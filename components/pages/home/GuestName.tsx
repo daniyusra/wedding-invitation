@@ -15,6 +15,13 @@ const GuestName = ({ name, ...stackProps }: NamedStackProps) => {
       justifyContent="center"
       alignItems="center"
       borderRadius="20px"
+      // backgroundImage="url('/dani2.png')"
+      // backgroundSize="50%" 
+      // backgroundPosition="130%"
+      backgroundImage="url('/zafira.png')"
+      backgroundSize="50%" 
+      backgroundPosition="-30%"
+      backgroundRepeat={'no-repeat'}
     >
       <Text textAlign="center" fontSize="25px" color="white">
         <span style={{ fontFamily: "NewSpiritLight" }}>Dear </span>
