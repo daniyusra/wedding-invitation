@@ -1,6 +1,5 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import Papa from "papaparse";
-import { VStackTransition } from "@/components/VStackTransition";
 import {
   Box,
   Button,
@@ -13,6 +12,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { Title } from "@/components/Title";
+import { BoxTransition } from "@/components/BoxTransition";
 
 type WeddingWishesProps = {
   displayName?: string;
@@ -86,7 +86,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
   };
 
   return (
-    <VStackTransition gap={[3, 5]} zIndex={1} {...stackProps}>
+    <BoxTransition gap={[3, 5]} zIndex={1} {...stackProps} w="90%">
       <VStack
         as="form"
         justifyContent={"center"}
@@ -160,7 +160,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
           {loading ? "Sending..." : "Send"}
         </Button>
       </VStack>
-      <VStack w={[80, 96]} h={[80, 96]} overflowY={"scroll"} gap={4}>
+      <VStack h={[80, 96]} overflowY={"scroll"} gap={4} marginTop="3">
         {data?.map((d: any, i) => (
           <VStack key={i} gap={1} w="full"backgroundColor={"#FFFFFF"}
           padding={5}
@@ -182,7 +182,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
           </VStack>
         ))}
       </VStack>
-    </VStackTransition>
+    </BoxTransition>
   );
 };
 

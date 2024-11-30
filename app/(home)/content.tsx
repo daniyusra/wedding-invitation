@@ -25,6 +25,8 @@ const HomeContent = ({ name, shortName }: { name?: string; shortName?: string; }
       /*pt={[20, 28]}*/
       /*pb={[24, 32]}*/
       gap={8}
+      justifyContent={"center"}
+      alignItems={"center"}
     >
       <HeaderZD />
       <GuestName name={shortName}/>
