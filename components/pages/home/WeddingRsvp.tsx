@@ -3,27 +3,35 @@ import Papa from "papaparse";
 import {
   Box,
   Button,
+  Text,
   Input,
   Select,
   StackProps,
   Textarea,
   VStack,
   useToast,
+  Collapse,
+  IconButton,
+  Icon, 
 } from "@chakra-ui/react";
-import { Title } from "@/components/Title";
 import { BoxTransition } from "@/components/BoxTransition";
+import { FaArrowLeft } from "react-icons/fa6";
 
 type WeddingRsvpProps = {
   displayName?: string;
+  displayShortName?: string;
 } & StackProps;
 
-const WeddingRsvp = ({ displayName, ...stackProps }: WeddingRsvpProps) => {
+const WeddingRsvp = ({ displayName, displayShortName, ...stackProps }: WeddingRsvpProps) => {
   const POST_URL = process.env.NEXT_PUBLIC_WEDDING_WISHES_POST as string;
   const GET_URL = process.env.NEXT_PUBLIC_WEDDING_WISHES_GET as string;
+  
+  const [pageState, setPageState] = useState<string>("0");
 
   const toast = useToast();
 
   const [name, setName] = useState<string>(displayName || "");
+  const [shortName, setShortName] = useState<string>(displayShortName || "");
   const [loading, setLoading] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const [data, setData] = useState<any[]>();
@@ -33,6 +41,10 @@ const WeddingRsvp = ({ displayName, ...stackProps }: WeddingRsvpProps) => {
   useEffect(() => {
     if (displayName) setName(displayName);
   }, [displayName]);
+
+  useEffect(() => {
+    if (displayShortName) setShortName(displayShortName);
+  }, [displayShortName]);
 
   useEffect(() => {
     Papa.parse(
@@ -49,6 +61,8 @@ const WeddingRsvp = ({ displayName, ...stackProps }: WeddingRsvpProps) => {
     e.preventDefault();
     setLoading(true);
 
+    setPageState("submitted");
+
     const body = new FormData(formRef.current!);
 
     fetch(
@@ -58,8 +72,9 @@ const WeddingRsvp = ({ displayName, ...stackProps }: WeddingRsvpProps) => {
       .then(() => {
         setLoading(false);
         formRef.current?.reset();
+
         toast({
-          description: "Thank you for your wishes!",
+          description: "Thank you for RSVP-ing!",
           status: "success",
           isClosable: true,
           duration: 2500,
@@ -92,12 +107,127 @@ const WeddingRsvp = ({ displayName, ...stackProps }: WeddingRsvpProps) => {
         alignItems={"center"}
         ref={formRef}
         onSubmit={onFormSubmit}
-        backgroundColor={"#385A41"}
+        backgroundColor={"#DD5D36"}
         gap={2}
         padding={5}
         borderRadius={10}
+        pt="55px" pb="55px"
       >
-        <Title color={"white"}>{`Say your blessings!`}</Title> 
+        <Box w="100%">
+        <Collapse in={pageState === "0"}>
+          <VStack>
+            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+              {`Long walks in Bali`}
+            </Text>
+            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+              {`Celebrating romance in Uluwatu and some`}
+            </Text>  
+            <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+              {`To ` + shortName + ` who we love dearly`}
+            </Text>
+            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+              {`Please let us know if you can come`}
+            </Text> 
+
+            <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
+                setAttend("1");
+                setPageState("1");
+              }}>
+              <span color="#DD5D36">We will certainly come!</span>
+            </Button>
+
+            <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
+                setAttend("0");
+                setTotal("");
+                setPageState("2");
+              }}>
+              <span color="#DD5D36">We cannot make it.</span>
+            </Button>  
+          </VStack>
+        </Collapse>
+        <Collapse in={pageState === "1"}>
+          <VStack width="100%">
+            <IconButton
+            aria-label="Back"
+            icon={<Icon as={FaArrowLeft} boxSize={6} color={"white"} />}
+            bg={"#50657F"}
+            isRound
+            alignSelf="start"
+            onClick={(e) => {
+              setAttend("");
+              setTotal("");
+              setPageState("0");
+            }}
+            />
+
+            <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+              {`Crowd size?`}
+            </Text>
+
+            <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
+                setTotal("1");
+                setPageState("2");
+              }}>
+              <span color="#DD5D36">Just me!</span>
+            </Button>
+
+            <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
+                setTotal("2");
+                setPageState("2");
+              }}>
+              <span color="#DD5D36">I will bring a plus one!</span>
+            </Button>  
+          </VStack>
+        </Collapse>
+        <Collapse in={pageState === "2"}>
+          <VStack width="100%">
+            <IconButton
+            aria-label="Back"
+            icon={<Icon as={FaArrowLeft} boxSize={6} color={"white"} />}
+            bg={"#50657F"}
+            isRound
+            alignSelf="start"
+            onClick={(e) => {
+              setAttend("");
+              setTotal("");
+              setPageState("0");
+            }}
+            />
+            <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+              Send a message for the lovebirds!
+            </Text>
+
+            <Textarea
+            name="wishes"
+            placeholder={"Type your wishes for us, " + name + "! (optional, press button)"}
+            w={[80, 96]}
+            autoComplete={"off"}
+            variant={"flushed"}
+            color="white"
+            focusBorderColor="white"
+            borderColor="white"
+            _placeholder={{color:"gray"}}
+            fontFamily={"NewSpiritRegular"}
+            />
+
+            <Button type="submit" isLoading={loading} mt="3" alignSelf={"end"} backgroundColor="#DD5D36">
+              {loading ? "Sending..." : "Send"}
+            </Button>  
+          </VStack>
+        </Collapse>
+        <Collapse in={pageState === "submitted"}>
+          <VStack width="100%">
+            <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+              Thank you for your confirmation!
+            </Text>
+          </VStack>
+        </Collapse>
+        </Box>
+        
+        {/*
+          Code below is the form functionality, do not touch
+        */} 
+        
         <Input
           name="name"
           placeholder="Name"
@@ -109,19 +239,6 @@ const WeddingRsvp = ({ displayName, ...stackProps }: WeddingRsvpProps) => {
           autoComplete={"on"}
           hidden
         />       
-        <Textarea
-          name="wishes"
-          placeholder={"Type your wishes for us, " + name}
-          required
-          w={[80, 96]}
-          autoComplete={"off"}
-          variant={"flushed"}
-          color="#BBBE33"
-          focusBorderColor="#BBBE33"
-          borderColor="#BBBE33"
-          _placeholder={{color:"#a2a374"}}
-          fontFamily={"NewSpiritRegular"}
-        />
         <Box hidden>
           <Select
             name="attending"
@@ -155,9 +272,6 @@ const WeddingRsvp = ({ displayName, ...stackProps }: WeddingRsvpProps) => {
             </Select>
           )}
         </Box>
-        <Button type="submit" isLoading={loading} mt="3" alignSelf={"end"} backgroundColor="#DD5D36">
-          {loading ? "Sending..." : "Send"}
-        </Button>
       </VStack>
     </BoxTransition>
   );

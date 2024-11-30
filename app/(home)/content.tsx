@@ -34,7 +34,7 @@ const HomeContent = ({ name, shortName }: { name?: string; shortName?: string; }
       <LandingPage />
       <Surah />
       <TimePlace />
-      <WeddingRsvp displayName={name} />
+      <WeddingRsvp displayName={name} displayShortName={shortName} />
       <OurEpicJourney />
       <HappinessCollection />
       <WeddingWishes displayName={name} />
