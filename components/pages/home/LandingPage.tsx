@@ -1,22 +1,20 @@
+import { BoxTransition } from "@/components/BoxTransition";
 import { Box, Stack, Text, StackProps } from "@chakra-ui/react";
 import 'components/index.css';
-import  background from "/public/background_undangan.png";
 
 const LandingPage = ({ ...stackProps }: StackProps) => {
   return (
-    <Stack
-      bg="white"
-      w="90%"
-      h="580px"
-      borderRadius="20px"
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      backgroundImage="/mg6.png" 
-      backgroundSize="100%" 
-      backgroundPosition="center"
-    >
-      
+    <BoxTransition   w="90%">
+      <Stack bg="white"
+        h="580px"
+        borderRadius="20px"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        backgroundImage="/mg6.png" 
+        backgroundSize="100%" 
+        backgroundPosition="center"
+      >
         <Text textAlign="center" color="#183641"
           style={{ 
             fontFamily: "NewSpiritRegular", 
@@ -59,8 +57,10 @@ const LandingPage = ({ ...stackProps }: StackProps) => {
         <Text textAlign="center" fontSize="55px" color="#183641"
           style={{ 
             fontFamily: "NewSpiritBoldItalic"
-        }}>Danial</Text>
-    </Stack>
+        }}>Danial
+        </Text>
+      </Stack>
+    </BoxTransition>
   );
 };
 
