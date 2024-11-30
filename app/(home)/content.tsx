@@ -10,6 +10,7 @@ import {
   TimePlace,
   Surah
 } from "@/components/pages/home";
+import { WeddingRsvp } from "@/components/pages/home/WeddingRsvp";
 import { WeddingWishes } from "@/components/pages/home/WeddingWishes";
 import { VStack } from "@chakra-ui/react";
 
@@ -33,6 +34,7 @@ const HomeContent = ({ name, shortName }: { name?: string; shortName?: string; }
       <LandingPage />
       <Surah />
       <TimePlace />
+      <WeddingRsvp displayName={name} />
       <OurEpicJourney />
       <HappinessCollection />
       <WeddingWishes displayName={name} />
