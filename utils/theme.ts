@@ -22,7 +22,7 @@ const theme = extendTheme({
           px: 6,
           fontWeight: 400,
           fontSize: "md",
-          fontFamily: coustard.style.fontFamily,
+          fontFamily: "NewSpiritMedium",
           bg: props.colorMode === "dark" ? "#50657F" : "#50657F",
           color: props.colorMode === "dark" ? "white" : "white",
           _hover: {
@@ -33,7 +33,7 @@ const theme = extendTheme({
       },
     },
     Alert: {
-      fontFamily: coustard.style.fontFamily,
+      fontFamily: "NewSpiritMedium",
     }
   },
 });

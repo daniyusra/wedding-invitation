@@ -27,6 +27,7 @@ const HomePage = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [name, setName] = useState<string | undefined>(getCookie("name"));
   const [shortName, setShortName] = useState<string | undefined>(getCookie("shortName"));
+  const [partner, setPartner] = useState<boolean | undefined>(getCookie("partner") == "true" ? true : false);
 
   const cookieOptions = useMemo(
     () => ({
@@ -57,6 +58,11 @@ const HomePage = () => {
       setShortName(displayShortName);
       setCookie("shortName", displayShortName, cookieOptions);
     }
+
+    if (hasPartner){
+      setPartner(hasPartner);
+      setCookie("partner", "true", cookieOptions);
+    }
   }, [query, cookieOptions]);
 
   useEffect(() => {
@@ -70,7 +76,7 @@ const HomePage = () => {
   return (
     <VStack minH="100vh" justifyContent={"center"} gap={0} overflowX={"hidden"}>
       <InvitationModal isOpen={isOpen} onClose={onClose} name={name} />
-      <HomeContent name={name} shortName={shortName}/>
+      <HomeContent name={name} shortName={shortName} hasPartner={partner} />
     </VStack>
   );
 };
