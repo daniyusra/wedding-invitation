@@ -20,9 +20,10 @@ import { FaArrowLeft } from "react-icons/fa6";
 type WeddingRsvpProps = {
   displayName?: string;
   displayShortName?: string;
+  hasPartner?: boolean;
 } & StackProps;
 
-const WeddingRsvp = ({ displayName, displayShortName, ...stackProps }: WeddingRsvpProps) => {
+const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps }: WeddingRsvpProps) => {
   const POST_URL = process.env.NEXT_PUBLIC_WEDDING_WISHES_POST as string;
   const GET_URL = process.env.NEXT_PUBLIC_WEDDING_WISHES_GET as string;
   
@@ -132,8 +133,15 @@ const WeddingRsvp = ({ displayName, displayShortName, ...stackProps }: WeddingRs
             </Text> 
 
             <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
-                setAttend("1");
-                setPageState("1");
+                if (hasPartner){
+                  setAttend("1");
+                  setPageState("1");
+                } else {
+                  setAttend("1");
+                  setTotal("1");
+                  setPageState("2");
+                }
+                
               }}>
               <span color="#DD5D36">We will certainly come!</span>
             </Button>
@@ -201,14 +209,14 @@ const WeddingRsvp = ({ displayName, displayShortName, ...stackProps }: WeddingRs
 
             <Textarea
             name="wishes"
-            placeholder={"Type your wishes for us, " + name + "! (optional, press button)"}
+            placeholder={"Type your wishes for us, " + name + "! (optional)"}
             w={[80, 96]}
             autoComplete={"off"}
             variant={"flushed"}
             color="white"
             focusBorderColor="white"
             borderColor="white"
-            _placeholder={{color:"gray"}}
+            _placeholder={{color:"gray.300"}}
             fontFamily={"NewSpiritRegular"}
             />
 
