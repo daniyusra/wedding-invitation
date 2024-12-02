@@ -1,40 +1,48 @@
-import { Image, StackProps, Text, Box } from "@chakra-ui/react";
+import { StackProps, Box } from "@chakra-ui/react";
 import 'components/index.css';
 
 const HeaderZD = ({ ...stackProps }: StackProps) => {
   return (
-    <Box bg="white" w="100%" p="2">
-        <div style={{ 
-            textAlign: 'center', 
-            fontSize: '25px',
-        }}>
-            <span
-                style={{
-                display: 'inline-block',
-                width: '35%',       // Adjust line length
-                borderBottom: '3px solid #bbbe32', // Left line
-                marginBottom: '6.5px',
-                marginRight: '30px' 
-                }}
-            />
-            <span style={{ color: '#183641', fontFamily: "NewSpiritBoldItalic" }}>Z</span>
-            <span style={{ 
-                color: '#dd5d36', 
-                fontWeight: 400, 
-                fontSize: '20px',
-                fontFamily: "NewSpiritMediumItalic"
-            }}> & </span>
-            <span style={{ color: '#183641', fontFamily: "NewSpiritBoldItalic" }}>D</span>
-            <span
-                style={{
-                display: 'inline-block',
-                width: '35%',       // Adjust line length
-                borderBottom: '3px solid #bbbe32', // Left line
-                marginBottom: '6.5px',
-                marginLeft: '30px' 
-                }}
-            />
-        </div>
+    <Box bg="#183641" w="100%" paddingTop="20px">
+    <div
+        style={{
+        display: 'flex', // Menggunakan flexbox
+        alignItems: 'center', // Semua elemen sejajar secara vertikal di tengah
+        justifyContent: 'center',
+        }}
+    >
+        <span
+        style={{
+            display: 'inline-block',
+            width: '35%', // Ukuran garis kiri
+            borderBottom: '2px solid #bbbe32', // Garis bawah
+            marginBottom: '2px',
+        }}
+        />
+        <span
+        style={{
+            display: 'inline-block',
+            margin: '0 20px', // Memberi jarak horizontal pada logo
+        }}
+        >
+        <img
+            src="/logo_zd.png"
+            style={{
+            width: '65px', // Ukuran logo
+            height: 'auto', 
+            }}
+            alt="Logo"
+        />
+        </span>
+        <span
+        style={{
+            display: 'inline-block',
+            width: '35%', 
+            borderBottom: '2px solid #bbbe32', 
+            marginBottom: '2px',
+        }}
+        />
+    </div>
     </Box>
   );
 };
