@@ -16,16 +16,19 @@ const GuestName = ({ name, ...stackProps }: NamedStackProps) => {
         justifyContent="center"
         alignItems="center"
         borderRadius="20px"
+        backgroundImage="/background_guestname.png" 
+        backgroundSize="100%" 
+        backgroundPosition="center"
       >
-        <Text textAlign="center" fontSize="25px" color="white">
+        <Text textAlign="center" fontSize="25px" color="#385a41">
           <span style={{ fontFamily: "NewSpiritLight" }}>Dear </span>
           <span style={{ fontFamily: "NewSpiritBoldItalic" }}>{name}</span>
           <span style={{ fontFamily: "NewSpiritLight" }}>,</span>
-        </Text>
+        </Text >
           <Text style={{ 
               fontSize: "23px", 
-              fontFamily: "NewSpiritLightItalic",
-              color: "white"
+              fontFamily: "NewSpiritLight",
+              color: "#385a41"
           }}>we want you to come to </Text>
       </Stack>
     </BoxTransition>
