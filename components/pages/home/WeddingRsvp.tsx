@@ -109,26 +109,26 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
         ref={formRef}
         onSubmit={onFormSubmit}
         backgroundColor={"#DD5D36"}
-        gap={2}
-        padding={5}
-        borderRadius={10}
-        pt="55px" pb="55px"
+        // gap={2}
+        // padding={5}
+        borderRadius={"20px"}
+        pt="40px" pb="40px"
         backgroundImage="/announcer_cat.png" 
         backgroundSize="100% auto"
       >
         <Box w="100%">
         <Collapse in={pageState === "0"}>
           <VStack>
-            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritMedium" }}>
               {`Long walks in Bali`}
             </Text>
-            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritMedium" }}>
               {`Celebrating romance in Uluwatu and some`}
             </Text>  
-            <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text marginTop="15px" textAlign="center" color="white" style={{ fontFamily: "NewSpiritMedium" }}>
               {`To ` + shortName + ` who we love dearly`}
             </Text>
-            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text marginBottom="20px" textAlign="center"  color="white" style={{ fontFamily: "NewSpiritMedium" }}>
               {`Please let us know if you can come`}
             </Text> 
 
@@ -157,23 +157,40 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
         </Collapse>
         <Collapse in={pageState === "1"}>
           <VStack width="100%">
-            <IconButton
-            aria-label="Back"
-            icon={<Icon as={FaArrowLeft} boxSize={6} color={"white"} />}
-            bg={"#50657F"}
-            isRound
-            alignSelf="start"
-            onClick={(e) => {
-              setAttend("");
-              setTotal("");
-              setPageState("0");
-            }}
-            />
+            <Box
+              display="flex"
+              alignItems="center" // Vertikal sejajar di tengah
+              justifyContent="center" // Teks di tengah
+              p="10px"
+              borderRadius="10px"
+            >
+              {/* Ikon di kiri */}
+              <IconButton
+                aria-label="Back"
+                icon={<Icon as={FaArrowLeft} boxSize={5} color={"white"} />}
+                bg={"transparent"}
+                isRound
+                position="absolute" // Posisikan ikon secara absolut
+                right={"85%"} // Pastikan jaraknya mentok ke kiri, atur nilai jika perlu
+                onClick={(e) => {
+                  setAttend("");
+                  setTotal("");
+                  setPageState("0");
+                }}
+              />
 
-            <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
-              {`Crowd size?`}
-            </Text>
-
+              {/* Teks di tengah */}
+              <span
+                style={{
+                  color: "white",
+                  fontFamily: "NewSpiritMedium",
+                  textAlign: "center",
+                  fontSize: "20px",
+                }}
+              >
+                {`Crowd size?`}
+              </span>
+            </Box>
             <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
                 setTotal("1");
                 setPageState("2");
@@ -191,21 +208,40 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
         </Collapse>
         <Collapse in={pageState === "2"}>
           <VStack width="100%">
-            <IconButton
-            aria-label="Back"
-            icon={<Icon as={FaArrowLeft} boxSize={6} color={"white"} />}
-            bg={"#50657F"}
-            isRound
-            alignSelf="start"
-            onClick={(e) => {
-              setAttend("");
-              setTotal("");
-              setPageState("0");
-            }}
-            />
-            <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
-              Send a message for the lovebirds!
-            </Text>
+            <Box
+              display="flex"
+              alignItems="center" // Vertikal sejajar di tengah
+              justifyContent="center" // Teks di tengah
+              p="10px"
+              borderRadius="10px"
+            >
+              {/* Ikon di kiri */}
+              <IconButton
+                aria-label="Back"
+                icon={<Icon as={FaArrowLeft} boxSize={5} color={"white"} />}
+                bg={"transparent"}
+                isRound
+                position="absolute" // Posisikan ikon secara absolut
+                right={"85%"} // Pastikan jaraknya mentok ke kiri, atur nilai jika perlu
+                onClick={(e) => {
+                  setAttend("");
+                  setTotal("");
+                  setPageState("0");
+                }}
+              />
+
+              {/* Teks di tengah */}
+              <span
+                style={{
+                  color: "white",
+                  fontFamily: "NewSpiritMedium",
+                  textAlign: "center",
+                  fontSize: "20px",
+                }}
+              >
+                {`Send a message for the lovebirds!`}
+              </span>
+            </Box>
 
             <Textarea
             name="wishes"
@@ -220,7 +256,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
             fontFamily={"NewSpiritRegular"}
             />
 
-            <Button type="submit" isLoading={loading} mt="3" alignSelf={"end"} backgroundColor="#DD5D36">
+            <Button type="submit" isLoading={loading} mt="3" ml={"65%"} backgroundColor="white" color={"#DD5D36"}>
               {loading ? "Sending..." : "Send"}
             </Button>  
           </VStack>

@@ -24,7 +24,7 @@ const HomeContent = ({ name, shortName, hasPartner }: { name?: string; shortName
       shadow={"lg"}
       position={"relative"}
       /*pt={[20, 28]}*/
-      /*pb={[24, 32]}*/
+      pb={"50px"}
       gap={8}
       justifyContent={"center"}
       alignItems={"center"}
@@ -36,7 +36,6 @@ const HomeContent = ({ name, shortName, hasPartner }: { name?: string; shortName
       <TimePlace />
       <WeddingRsvp displayName={name} displayShortName={shortName} hasPartner={hasPartner}/>
       <WeddingWishes displayName={name} />
-      <Blessing />
     </VStack>
   );
 };
