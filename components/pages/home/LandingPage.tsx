@@ -6,12 +6,12 @@ const LandingPage = ({ ...stackProps }: StackProps) => {
   return (
     <BoxTransition   w="90%">
       <Stack bg="white"
-        h="580px"
+        h="600px"
         borderRadius="20px"
         display="flex"
         justifyContent="center"
         alignItems="center"
-        backgroundImage="/mg6.png" 
+        backgroundImage="/background_landingpage.png" 
         backgroundSize="100%" 
         backgroundPosition="center"
       >
@@ -19,11 +19,11 @@ const LandingPage = ({ ...stackProps }: StackProps) => {
           style={{ 
             fontFamily: "NewSpiritRegular", 
             marginBottom: '15px',
-            marginTop: '50px', 
+            marginTop: '28px', 
             fontSize: "25px",
             display: 'inline-block', 
         }}>The wedding of </Text>
-        <Text textAlign="center" fontSize="55px" color="#183641"
+        <Text textAlign="center" fontSize="60px" color="#183641"
           style={{ 
             fontFamily: "NewSpiritBoldItalic"
         }}>Zafira</Text>
@@ -31,10 +31,10 @@ const LandingPage = ({ ...stackProps }: StackProps) => {
           <span
               style={{
               display: 'inline-block',
-              width: '120px',       // Adjust line length
+              width: '130px',       // Adjust line length
               borderBottom: '3px solid #f2bf4b', // Left line
               marginBottom: '15px',
-              marginRight: '15px' 
+              marginRight: '20px' 
               }}
           />
           <span style={{ 
@@ -47,14 +47,14 @@ const LandingPage = ({ ...stackProps }: StackProps) => {
           <span
               style={{
               display: 'inline-block',
-              width: '120px',       // Adjust line length
+              width: '130px',       // Adjust line length
               borderBottom: '3px solid #f2bf4b', // Left line
               marginBottom: '15px',
-              marginLeft: '15px' 
+              marginLeft: '20px' 
               }}
           />
         </Box>
-        <Text textAlign="center" fontSize="55px" color="#183641"
+        <Text textAlign="center" fontSize="60px" color="#183641"
           style={{ 
             fontFamily: "NewSpiritBoldItalic"
         }}>Danial
