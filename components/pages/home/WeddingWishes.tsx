@@ -62,10 +62,12 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
 
   return (
     <BoxTransition gap={[3, 5]} zIndex={1} {...stackProps} w="90%">
-      <VStack h="30rem" gap={4} marginTop="3" 
-      backgroundColor={"#385A41"} padding={5} borderRadius={10}>
-        <Title color="white">{`Your blessings & greetings`}</Title>
-        <Box w="100%" overflowY={"scroll"} ref={dataContainerRef}>
+      <VStack h="40rem" gap={4}
+      backgroundColor={"#385A41"} padding={"5"} paddingTop={"8"} borderRadius={'20px'}>
+        <Title fontFamily={'NewSpiritSemiBold'} fontSize={"2xl"} color="white">
+          {`Your blessings & greetings`}
+        </Title>
+        <Box w="100%" h={'28rem'} overflowY={"scroll"} ref={dataContainerRef}>
         {paginatedData.map(
           (d: any, i) =>
             d.wishes?.trim() && (
@@ -106,7 +108,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
             )
         )}
         </Box>
-        <HStack w="full" justifyContent="center" marginTop={4} spacing={4}>
+        <HStack w="full" justifyContent="center" marginTop={4} spacing={10}>
           <IconButton
             aria-label="Back"
             icon={<Icon as={FaArrowLeft} boxSize={6} color={"white"} />}

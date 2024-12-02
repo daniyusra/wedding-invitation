@@ -12,7 +12,8 @@ import {
   useToast,
   Collapse,
   IconButton,
-  Icon, 
+  Icon,
+  HStack, 
 } from "@chakra-ui/react";
 import { BoxTransition } from "@/components/BoxTransition";
 import { FaArrowLeft } from "react-icons/fa6";
@@ -119,16 +120,16 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
         <Box w="100%">
         <Collapse in={pageState === "0"}>
           <VStack>
-            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritMedium" }}>
+            <Text textAlign="center"  color="white" fontSize={'lg'} style={{ fontFamily: "NewSpiritMedium" }}>
               {`Long walks in Bali`}
             </Text>
-            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritMedium" }}>
+            <Text textAlign="center"  color="white" fontSize={'lg'} style={{ fontFamily: "NewSpiritMedium" }}>
               {`Celebrating romance in Uluwatu and some`}
             </Text>  
-            <Text marginTop="15px" textAlign="center" color="white" style={{ fontFamily: "NewSpiritMedium" }}>
+            <Text marginTop="15px" textAlign="center" color="white" fontSize={'lg'} style={{ fontFamily: "NewSpiritMedium" }}>
               {`To ` + shortName + ` who we love dearly`}
             </Text>
-            <Text marginBottom="20px" textAlign="center"  color="white" style={{ fontFamily: "NewSpiritMedium" }}>
+            <Text marginBottom="20px" textAlign="center"  color="white" fontSize={'lg'} style={{ fontFamily: "NewSpiritMedium" }}>
               {`Please let us know if you can come`}
             </Text> 
 
@@ -171,7 +172,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
                 bg={"transparent"}
                 isRound
                 position="absolute" // Posisikan ikon secara absolut
-                right={"85%"} // Pastikan jaraknya mentok ke kiri, atur nilai jika perlu
+                right={"27rem"} // Pastikan jaraknya mentok ke kiri, atur nilai jika perlu
                 onClick={(e) => {
                   setAttend("");
                   setTotal("");
@@ -208,7 +209,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
         </Collapse>
         <Collapse in={pageState === "2"}>
           <VStack width="100%">
-            <Box
+            <HStack
               display="flex"
               alignItems="center" // Vertikal sejajar di tengah
               justifyContent="center" // Teks di tengah
@@ -231,17 +232,17 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
               />
 
               {/* Teks di tengah */}
-              <span
+              <Text
                 style={{
                   color: "white",
                   fontFamily: "NewSpiritMedium",
                   textAlign: "center",
-                  fontSize: "20px",
                 }}
+                fontSize={'5xl'}
               >
                 {`Send a message for the lovebirds!`}
-              </span>
-            </Box>
+              </Text>
+            </HStack>
 
             <Textarea
             name="wishes"
