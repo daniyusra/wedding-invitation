@@ -1,69 +1,34 @@
 import { BoxTransition } from "@/components/BoxTransition";
-import { Box, Text, StackProps } from "@chakra-ui/react";
+import { Box, Stack, Text, StackProps, Button } from "@chakra-ui/react";
+import { RiArrowRightLine } from "react-icons/ri";
 import 'components/index.css';
 
 const TimePlace = ({ ...stackProps }: StackProps) => {
   return (
-    <BoxTransition
-      w="90%"
-    >
-        <Box       borderRadius="20px"
-      backgroundImage="/mg5.png" 
-      backgroundSize="100%" 
-      backgroundPosition="center" pt="55px" pb="55px">
-            <Text textAlign="center" color="white">
+    <BoxTransition w="90%">
+        <Stack 
+            borderRadius="20px"
+            backgroundImage="/background_timeplace.png" 
+            backgroundSize="100%" 
+            backgroundPosition="center" 
+            h="580px"
+            display="flex"
+            paddingTop={'50px'}
+            alignItems="center"
+        >
+            <Box>
                 <span
                     style={{
                     display: 'inline-block',
                     width: '100px',       // Adjust line length
-                    borderBottom: '1.5px solid #183641', // Left line
+                    borderBottom: '1.5px solid #385A41', // Left line
                     marginBottom: '5px',
                     marginRight: '20px' 
                     }}
                 />
                 <span style={{ 
                     fontFamily: "NewSpiritRegular", 
-                    color: '#183641',
-                    fontSize: "20px",
-                    display: 'inline-block' 
-                }}>Tempat</span>
-                <span
-                    style={{
-                    display: 'inline-block',
-                    width: '100px',       // Adjust line length
-                    borderBottom: '1.5px solid #183641', // Left line
-                    marginBottom: '5px',
-                    marginLeft: '20px' 
-                    }}
-                />
-                <br />
-                <a
-                href="https://maps.app.goo.gl/Wnt2jTofyFUwg5JJ8" 
-                style={{ 
-                    fontFamily: "NewSpiritSemiBold",
-                    fontSize: '42px',
-                    textDecoration: 'underline'
-                }}>Balai Komando</a>
-                <br />
-                <span style={{ 
-                    fontFamily: "NewSpiritLight",
-                    fontSize: '25px',
-                    display: 'inline-block',
-                    marginBottom: '65px'
-                }}>Cijantung, Jakarta Timur</span>
-                <br />
-                <span
-                    style={{
-                    display: 'inline-block',
-                    width: '100px',       // Adjust line length
-                    borderBottom: '1.5px solid #183641', // Left line
-                    marginBottom: '5px',
-                    marginRight: '20px' 
-                    }}
-                />
-                <span style={{ 
-                    fontFamily: "NewSpiritRegular", 
-                    color: '#183641',
+                    color: '#385A41',
                     fontSize: "20px",
                     display: 'inline-block' 
                 }}>Tanggal</span>
@@ -71,36 +36,74 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                     style={{
                     display: 'inline-block',
                     width: '100px',       // Adjust line length
-                    borderBottom: '1.5px solid #183641', // Left line
+                    borderBottom: '1.5px solid #385A41', // Left line
                     marginBottom: '5px',
                     marginLeft: '20px' 
                     }}
                 />
-                <br />
-                <span style={{ 
-                    fontFamily: "NewSpiritBold",
-                    fontSize: '37px'
-                }}>15 Februari 2025</span>
-                <br />
-                <span style={{ 
-                    fontFamily: "NewSpiritMedium",
-                    fontSize: '20px'
-                }}>Akad </span>
-                <span style={{ 
-                    fontFamily: "NewSpiritMedium",
-                    fontSize: '25px'
-                }}>08.00 - 10.00</span>
-                <br />
-                <span style={{ 
-                    fontFamily: "NewSpiritMedium",
-                    fontSize: '20px'
-                }}>Resepsi </span>
-                <span style={{ 
-                    fontFamily: "NewSpiritMedium",
-                    fontSize: '25px'
-                }}>11.00 - 13.00</span>
+            </Box>
+            <Text style={{ 
+                fontFamily: "NewSpiritBold",
+                fontSize: '30px',
+                color: 'white'
+            }}>15 Februari 2025</Text>
+            <Text color={'white'}>
+                <span style={{ fontFamily: "NewSpiritLight", fontSize: '20px' }}>Akad </span>
+                <span style={{ fontFamily: "NewSpiritMedium", fontSize: '25px' }}>08.00 - 10.00</span>
             </Text>
-        </Box>
+            <Text color={'white'} >
+                <span style={{ fontFamily: "NewSpiritLight", fontSize: '20px' }}>Resepsi </span>
+                <span style={{ fontFamily: "NewSpiritMedium", fontSize: '25px' }}>11.00 - 13.00</span>
+            </Text>
+            <Box marginTop={'40px'}>
+                <span
+                    style={{
+                    display: 'inline-block',
+                    width: '100px',       // Adjust line length
+                    borderBottom: '1.5px solid #385A41', // Left line
+                    marginBottom: '5px',
+                    marginRight: '20px' 
+                    }}
+                />
+                <span style={{ 
+                    fontFamily: "NewSpiritRegular", 
+                    color: '#385A41',
+                    fontSize: "20px",
+                    display: 'inline-block' 
+                }}>Tempat</span>
+                <span
+                    style={{
+                    display: 'inline-block',
+                    width: '100px',       // Adjust line length
+                    borderBottom: '1.5px solid #385A41', // Left line
+                    marginBottom: '5px',
+                    marginLeft: '20px' 
+                    }}
+                />
+            </Box>
+            <Text
+                style={{ 
+                    fontFamily: "NewSpiritSemiBold",
+                    fontSize: '32px',
+                    color: 'white'
+            }}>Balai Komando</Text>
+            <Text style={{ 
+                fontFamily: "NewSpiritLight",
+                fontSize: '25px',
+                display: 'inline-block',
+                color: 'white'
+            }}>Cijantung, Jakarta Timur</Text>
+            <Button 
+                backgroundColor={'white'} 
+                color={'#385A41'}
+                borderRadius={'20px'}
+                marginTop={'15px'}
+                onClick={() => window.open("https://maps.app.goo.gl/1joNv2hgdRDWZ2NBA", "_blank")}
+            >
+                Google Maps 
+                <RiArrowRightLine style={{ marginLeft: "10px" }} />
+            </Button>
+        </Stack>
     </BoxTransition>
   );
 };
