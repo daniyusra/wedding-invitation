@@ -30,16 +30,13 @@ const HomeContent = ({ name, shortName, hasPartner }: { name?: string; shortName
       alignItems={"center"}
     >
       <HeaderZD />
+      <Surah />
       <GuestName name={shortName}/>
       <LandingPage />
-      <Surah />
       <TimePlace />
       <WeddingRsvp displayName={name} displayShortName={shortName} hasPartner={hasPartner}/>
-      <OurEpicJourney />
-      <HappinessCollection />
       <WeddingWishes displayName={name} />
       <Blessing />
-      <Footer />
     </VStack>
   );
 };
