@@ -38,7 +38,6 @@ const HomeContent = ({ name, shortName, hasPartner }: { name?: string; shortName
       <Gallery />
       <WeddingRsvp displayName={name} displayShortName={shortName} hasPartner={hasPartner}/>
       <WeddingWishes displayName={name} />
-      <Blessing />
     </VStack>
   );
 };
