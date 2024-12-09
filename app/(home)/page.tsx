@@ -3,7 +3,7 @@
 import { InvitationModal } from "@/components/modals";
 import { VStack, useDisclosure } from "@chakra-ui/react";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { setCookie, getCookie } from "cookies-next";
 import { HomeContent } from "./content";
 import { getDisplayName } from "./utils";
@@ -28,6 +28,8 @@ const HomePage = () => {
   const [name, setName] = useState<string | undefined>(getCookie("name"));
   const [shortName, setShortName] = useState<string | undefined>(getCookie("shortName"));
   const [partner, setPartner] = useState<boolean | undefined>(getCookie("partner") == "true" ? true : false);
+
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const cookieOptions = useMemo(
     () => ({
@@ -73,10 +75,26 @@ const HomePage = () => {
     if (isOpen) setCookie("is-recently-open", "1", cookieOptions);
   }, [isOpen, cookieOptions]);
 
+  const onClosePlayMusic = () => {
+    onClose();
+    if (audioRef.current) {
+      try {
+        audioRef.current.play();
+        console.log("Audio autoplay succeeded.");
+      } catch (error) {
+        console.warn("Autoplay prevented: User interaction required.", error);
+      }
+    }
+  };
+
   return (
     <VStack minH="100vh" justifyContent={"center"} gap={0} overflowX={"hidden"}>
-      <InvitationModal isOpen={isOpen} onClose={onClose} name={name} />
+      <InvitationModal isOpen={isOpen} onClose={onClosePlayMusic} name={name} />
       <HomeContent name={name} shortName={shortName} hasPartner={partner} />
+      <audio ref={audioRef} loop>
+        <source src="/cintaku.mp3" type="audio/mpeg" />
+        Your browser does not support the audio tag.
+      </audio>
     </VStack>
   );
 };
