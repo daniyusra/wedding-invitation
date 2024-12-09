@@ -11,3 +11,4 @@ export * from "./GuestName";
 export * from "./LandingPage";
 export * from "./TimePlace";
 export * from "./Surah";
+export * from "./AudioPlay";

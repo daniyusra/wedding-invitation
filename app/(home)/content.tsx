@@ -8,7 +8,8 @@ import {
   GuestName,
   LandingPage,
   TimePlace,
-  Surah
+  Surah,
+  AudioPlay
 } from "@/components/pages/home";
 import { WeddingRsvp } from "@/components/pages/home/WeddingRsvp";
 import { WeddingWishes } from "@/components/pages/home/WeddingWishes";
@@ -29,6 +30,7 @@ const HomeContent = ({ name, shortName, hasPartner }: { name?: string; shortName
       justifyContent={"center"}
       alignItems={"center"}
     >
+      <AudioPlay />
       <HeaderZD />
       <Surah />
       <GuestName name={shortName}/>
