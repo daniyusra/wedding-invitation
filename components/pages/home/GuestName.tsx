@@ -17,7 +17,7 @@ const GuestName = ({ name, ...stackProps }: NamedStackProps) => {
         alignItems="center"
         borderRadius="20px"
         backgroundImage="/background_guestname.png" 
-        backgroundSize="100%" 
+        backgroundSize="cover" 
         backgroundPosition="center"
       >
         <Text textAlign="center" fontSize="25px" color="#385a41">
