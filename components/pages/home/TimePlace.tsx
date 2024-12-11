@@ -9,7 +9,7 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
         <Stack 
             borderRadius="20px"
             backgroundImage="/background_timeplace.png" 
-            backgroundSize="100%" 
+            backgroundSize="cover" 
             backgroundPosition="center" 
             h="580px"
             display="flex"

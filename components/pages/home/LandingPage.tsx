@@ -12,7 +12,7 @@ const LandingPage = ({ ...stackProps }: StackProps) => {
         justifyContent="center"
         alignItems="center"
         backgroundImage="/background_landingpage.png" 
-        backgroundSize="100%" 
+        backgroundSize="cover" 
         backgroundPosition="center"
       >
         <Text textAlign="center" color="#183641"
