@@ -114,7 +114,8 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
         borderRadius={10}
         pt="55px" pb="55px"
         backgroundImage="/announcer_cat.png" 
-        backgroundSize="100% auto"
+        backgroundSize="cover"
+        height="20em"
       >
         <Box w="100%">
         <Collapse in={pageState === "0"}>
