@@ -31,7 +31,7 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                     color: '#385A41',
                     fontSize: "20px",
                     display: 'inline-block' 
-                }}>Tanggal</span>
+                }}>Date & Time</span>
                 <span
                     style={{
                     display: 'inline-block',
@@ -46,16 +46,18 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                 fontFamily: "NewSpiritBold",
                 fontSize: '30px',
                 color: 'white'
-            }}>15 Februari 2025</Text>
+            }}>15th February 2025</Text>
             <Text color={'white'}>
                 <span style={{ fontFamily: "NewSpiritLight", fontSize: '20px' }}>Akad </span>
                 <span style={{ fontFamily: "NewSpiritMedium", fontSize: '25px' }}>08.00 - 10.00</span>
+                <span style={{ fontFamily: "NewSpiritMedium", fontSize: '25px', color:"#385A41"}}>*</span>
             </Text>
             <Text color={'white'} >
-                <span style={{ fontFamily: "NewSpiritLight", fontSize: '20px' }}>Resepsi </span>
+                <span style={{ fontFamily: "NewSpiritLight", fontSize: '20px' }}>Reception </span>
                 <span style={{ fontFamily: "NewSpiritMedium", fontSize: '25px' }}>11.00 - 13.00</span>
             </Text>
-            <Box marginTop={'40px'}>
+            <Text color={'#385A41'} fontFamily="NewSpiritLight" size="xs">*Only for family members</Text>
+            <Box marginTop={'20px'}>
                 <span
                     style={{
                     display: 'inline-block',
@@ -70,7 +72,7 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                     color: '#385A41',
                     fontSize: "20px",
                     display: 'inline-block' 
-                }}>Tempat</span>
+                }}>Address</span>
                 <span
                     style={{
                     display: 'inline-block',

@@ -115,22 +115,22 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
         pt="55px" pb="55px"
         backgroundImage="/announcer_cat.png" 
         backgroundSize="cover"
-        height="20em"
+        height="25em"
       >
         <Box w="100%">
         <Collapse in={pageState === "0"}>
           <VStack>
             <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
-              {`Long walks in Bali`}
+              {`Strolling down Menteng, trees always green`}
             </Text>
             <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
-              {`Celebrating romance in Uluwatu and some`}
+              {`To sip coffee in the old town's charm`}
             </Text>  
             <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
-              {`To ` + shortName + ` who we love dearly`}
+              {`To ` + shortName + ` dear to us you've been`}
             </Text>
             <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
-              {`Please let us know if you can come`}
+              {`Your presence would fill our hearts with warm`}
             </Text> 
 
             <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
