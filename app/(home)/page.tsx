@@ -86,7 +86,7 @@ const HomePage = () => {
       <InvitationModal isOpen={isOpen} onClose={onClosePlayMusic} name={name} />
       <HomeContent name={name} shortName={shortName} hasPartner={partner} />
       <audio ref={audioRef} loop>
-        <source src="/cintaku.mp3" type="audio/mpeg" />
+        <source src="https://ap-yt.com/download-mp3/eyJpdiI6InRhTmExYU1QcHpleGhvTDV2eWxHNUE9PSIsInZhbHVlIjoiY3hBQ1BQWHBLMHFxQ0NIdWt0MTRuZWdxTU5TZHUvSUo4Q1Q3TC9iSG5Vbzg2WHliUGR0NmE2OFk5Nzc3Yi80WkJtL0JpTGswY0ZiRGtCSFpXOGxOWXc9PSIsIm1hYyI6IjA0M2ZjMWFmYjQxMzFhZTMzYmVkMzJmMDJkZTlhMWM5YjQ4ODliY2JhMmM0NDFiNzgxZmMxN2U0YjU5NmY1MDgiLCJ0YWciOiIifQ==/finish" type="audio/mpeg" />
         Your browser does not support the audio tag.
       </audio>
     </VStack>
