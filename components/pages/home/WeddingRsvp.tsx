@@ -120,10 +120,10 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
         <Box w="100%">
         <Collapse in={pageState === "0"}>
           <VStack>
-            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+          <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritBoldItalic" }}>
               {`Strolling down Menteng, trees always green`}
             </Text>
-            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritLightItalic" }}>
               {`To sip coffee in the old town's charm`}
             </Text>  
             <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
