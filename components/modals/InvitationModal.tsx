@@ -31,13 +31,18 @@ const Title = ({
 const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
   const [modalOpen, setModalOpen] = useState(isOpen);
 
-  const [valid] =  useState(!!name);
+  const [valid, setValid] =  useState(!!name);
 
   useEffect(() => {
     if (isOpen) {
       setModalOpen(true); 
     }
   }, [isOpen]);
+  
+  useEffect(() => {
+    setValid(!!name);
+  }, [name]);
+  
 
   const handleClose = () => {
     onClose();
