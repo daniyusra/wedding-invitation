@@ -41,8 +41,6 @@ const HomePage = () => {
     []
   );
 
-  const isRecentlyOpen = getCookie("is-recently-open") === "1";
-
   useEffect(() => {
     const to = query.get("to");
     const gender = query.get("g")?.toLowerCase();
@@ -68,12 +66,8 @@ const HomePage = () => {
   }, [query, cookieOptions]);
 
   useEffect(() => {
-    if (name && !isRecentlyOpen) onOpen();
-  }, [name, isRecentlyOpen, onOpen]);
-
-  useEffect(() => {
-    if (isOpen) setCookie("is-recently-open", "1", cookieOptions);
-  }, [isOpen, cookieOptions]);
+    onOpen();
+  }, [onOpen]);
 
   const onClosePlayMusic = () => {
     onClose();
