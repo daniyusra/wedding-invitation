@@ -31,6 +31,8 @@ const Title = ({
 const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
   const [modalOpen, setModalOpen] = useState(isOpen);
 
+  const [valid] =  useState(!!name);
+
   useEffect(() => {
     if (isOpen) {
       setModalOpen(true); 
@@ -44,7 +46,7 @@ const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
 
   return (
     <Modal isOpen={modalOpen} onClose={handleClose} size={"full"}>
-      <CommonModalContent
+      { valid && <CommonModalContent
         justifyContent={"center"}
         alignItems={"left"}
         onClick={handleClose}
@@ -58,7 +60,20 @@ const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
           <Title fontWeight="bold" fontSize={"5xl"}>Danial</Title>
           <Text  fontSize={"lg"} fontFamily={"NewSpiritRegular"}>to <span style={{fontFamily: "NewSpiritBold" }}>{name}</span></Text>
         </Box>
-      </CommonModalContent>
+      </CommonModalContent> }
+      
+      { !valid && 
+      <CommonModalContent
+        justifyContent={"center"}
+        alignItems={"left"}
+        gap={0}
+        isOpen={isOpen}
+      >
+        <Box animation={!isOpen ? slideToTopFullAnimation : "none" } style={{animationDelay: "450ms"}}>
+        <Text fontSize={"lg"} fontFamily={"NewSpiritBold"}>This invitation may not be valid</Text>
+          <Text marginTop={{base: "4em", sm: "0"}} fontSize={"lg"} fontFamily={"NewSpiritRegular"}>Please reach out to Zafira or Danial.</Text>
+        </Box>
+      </CommonModalContent>  }
     </Modal>
   );
 };
