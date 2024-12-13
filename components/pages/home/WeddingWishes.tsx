@@ -43,12 +43,12 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
   return (
     <BoxTransition gap={[3, 5]} zIndex={1} {...stackProps} w="90%">
       <VStack
-        h="30rem"
+        h="40rem"
         gap={4}
         marginTop="3"
         backgroundColor={"#385A41"}
         padding={5}
-        borderRadius={10}
+        borderRadius={20}
       >
         <Title color="white">{`Your blessings & greetings`}</Title>
         <Box
