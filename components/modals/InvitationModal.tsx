@@ -69,7 +69,7 @@ const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
             flexDirection="column" 
             alignItems="center"
           >
-            <Image src="/logo_zd.png"style={{ width: '6vw', height: 'auto' }} alt="Logo" marginBottom="4"/>
+            <Image src="/logo_zd.png"style={{ width: "5em", height: 'auto' }} alt="Logo" marginBottom="4"/>
             <Text fontSize={"lg"} fontFamily={"NewSpiritRegular"} color={"white"} paddingBottom={'1vh'}>To the one we love,</Text>
             <Text fontSize={"2xl"} fontFamily={"NewSpiritMedium"} color={"white"}>{name}</Text>
           </Box>
