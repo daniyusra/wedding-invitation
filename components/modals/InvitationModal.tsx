@@ -1,7 +1,8 @@
-import { Box, Modal, Text, TextProps } from "@chakra-ui/react";
+import { Box, Modal, Text, TextProps, VStack, IconButton, Image } from "@chakra-ui/react";
 import { CommonModalContent } from "./CommonModalContent";
 import { slideToTopFullAnimation } from "../Animations";
 import { useEffect, useState } from "react";
+import { FaArrowDown } from "react-icons/fa";
 
 type InvitationModalProps = {
   isOpen: boolean;
@@ -53,20 +54,41 @@ const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
     <Modal isOpen={modalOpen} onClose={handleClose} size={"full"}>
       { valid && <CommonModalContent
         justifyContent={"center"}
-        alignItems={"left"}
+        alignItems={"center"}
         onClick={handleClose}
         gap={0}
         isOpen={isOpen}
       >
-        <Box animation={!isOpen ? slideToTopFullAnimation : "none" } style={{animationDelay: "450ms"}}>
-          <Text marginTop={{base: "4em", sm: "0"}} fontSize={"lg"} fontFamily={"NewSpiritRegular"}>We are inviting you to</Text>
-          <Text fontSize={"lg"} fontFamily={"NewSpiritBold"}>The Wedding Of</Text>
-          <Title fontWeight="bold" fontSize={"5xl"}>Zafira &</Title>
-          <Title fontWeight="bold" fontSize={"5xl"}>Danial</Title>
-          <Text  fontSize={"lg"} fontFamily={"NewSpiritRegular"}>to <span style={{fontFamily: "NewSpiritBold" }}>{name}</span></Text>
-        </Box>
+        <VStack marginTop={'50vh'}>
+          <Box 
+            textAlign="center" 
+            paddingTop={'3vh'}
+            animation={!isOpen ? slideToTopFullAnimation : "none"}
+            style={{ animationDelay: "450ms" }}
+            display="flex" 
+            flexDirection="column" 
+            alignItems="center"
+          >
+            <Image src="/logo_zd.png"style={{ width: "5em", height: 'auto' }} alt="Logo" marginBottom="4"/>
+            <Text fontSize={"lg"} fontFamily={"NewSpiritRegular"} color={"white"} paddingBottom={'1vh'}>To the one we love,</Text>
+            <Text fontSize={"2xl"} fontFamily={"NewSpiritMedium"} color={"white"}>{name}</Text>
+          </Box>
+
+          <IconButton
+            icon={<FaArrowDown />}
+            aria-label="Scroll Down"
+            variant="ghost"
+            color="#DD5D36" 
+            fontSize="lg"
+            borderRadius="50%"
+            backgroundColor="white"
+            padding="3px" 
+            animation={!isOpen ? slideToTopFullAnimation : "none"}
+            marginTop="2vh" 
+          />
+        </VStack>
       </CommonModalContent> }
-      
+
       { !valid && 
       <CommonModalContent
         justifyContent={"center"}
