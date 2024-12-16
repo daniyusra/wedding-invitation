@@ -27,7 +27,7 @@ const EnvelopeOrnament = ({ isOpen }: OrnamentProps) => {
         <Image
           src="/background_titlepage_top.png"
           alt="Top Ornaments"
-          style={{ width: "100%", height: "auto", objectFit: "cover" }}
+          style={{ width: "100%", height: "45vh"}}
         />
       </Box>
 
@@ -44,7 +44,7 @@ const EnvelopeOrnament = ({ isOpen }: OrnamentProps) => {
         <Image
           src="/background_titlepage_bottom.png"
           alt="Bottom Ornaments"
-          style={{ width: "100%", height: "auto", objectFit: "cover" }}
+          style={{ width: "100%", height: "43vh"}}
         />
       </Box>
     </VStack>

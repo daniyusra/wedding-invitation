@@ -19,7 +19,7 @@ const CommonModalContent = ({
       h="100vh"
       justifyContent={"center"}
       alignItems={"center"}
-      // bg="#183641"
+      bg="#183641"
     >
       <VStack
         maxW={"lg"}

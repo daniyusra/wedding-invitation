@@ -1,8 +1,8 @@
-import { Box, Modal, Text, TextProps, VStack, IconButton } from "@chakra-ui/react";
+import { Box, Modal, Text, TextProps, VStack, IconButton, Image } from "@chakra-ui/react";
 import { CommonModalContent } from "./CommonModalContent";
 import { slideToTopFullAnimation } from "../Animations";
 import { useEffect, useState } from "react";
-import { FaArrowDown } from "react-icons/fa"; // Menggunakan react-icons untuk ikon panah
+import { FaArrowDown } from "react-icons/fa";
 
 type InvitationModalProps = {
   isOpen: boolean;
@@ -59,21 +59,17 @@ const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
         gap={0}
         isOpen={isOpen}
       >
-      <VStack marginTop={'50vh'}>
-        <img
-            src="/logo_zd.png"
-            style={{
-            width: '6vw', // Ukuran logo
-            height: 'auto', 
-            }}
-            alt="Logo"
-          />
+        <VStack marginTop={'50vh'}>
           <Box 
-            textAlign="center"  // Teks di dalam Box menjadi rata tengah
+            textAlign="center" 
             paddingTop={'3vh'}
             animation={!isOpen ? slideToTopFullAnimation : "none"}
             style={{ animationDelay: "450ms" }}
+            display="flex" 
+            flexDirection="column" 
+            alignItems="center"
           >
+            <Image src="/logo_zd.png"style={{ width: '6vw', height: 'auto' }} alt="Logo" marginBottom="4"/>
             <Text fontSize={"lg"} fontFamily={"NewSpiritRegular"} color={"white"} paddingBottom={'1vh'}>To the one we love,</Text>
             <Text fontSize={"2xl"} fontFamily={"NewSpiritMedium"} color={"white"}>{name}</Text>
           </Box>
@@ -87,11 +83,7 @@ const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
             borderRadius="50%"
             backgroundColor="white"
             padding="3px" 
-            onClick={() => {
-              window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-            }}
             animation={!isOpen ? slideToTopFullAnimation : "none"}
-            style={{ animationDelay: "450ms" }}
             marginTop="2vh" 
           />
         </VStack>
