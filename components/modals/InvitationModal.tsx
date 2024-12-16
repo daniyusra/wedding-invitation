@@ -59,7 +59,7 @@ const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
         gap={0}
         isOpen={isOpen}
       >
-        <VStack marginTop={'50vh'}>
+        <VStack marginTop={'40vh'}>
           <Box 
             textAlign="center" 
             paddingTop={'3vh'}
@@ -96,10 +96,21 @@ const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
         gap={0}
         isOpen={isOpen}
       >
-        <Box animation={!isOpen ? slideToTopFullAnimation : "none" } style={{animationDelay: "450ms"}}>
-        <Text fontSize={"lg"} fontFamily={"NewSpiritBold"}>This invitation may not be valid</Text>
-          <Text marginTop={{base: "4em", sm: "0"}} fontSize={"lg"} fontFamily={"NewSpiritRegular"}>Please reach out to Zafira or Danial.</Text>
-        </Box>
+<VStack marginTop={'40vh'}>
+          <Box 
+            textAlign="center" 
+            paddingTop={'3vh'}
+            animation={!isOpen ? slideToTopFullAnimation : "none"}
+            style={{ animationDelay: "450ms" }}
+            display="flex" 
+            flexDirection="column" 
+            alignItems="center"
+          >
+            <Image src="/logo_zd.png"style={{ width: "5em", height: 'auto' }} alt="Logo" marginBottom="4"/>
+            <Text fontSize={"lg"} fontFamily={"NewSpiritRegular"} color={"white"} paddingBottom={'1vh'}>This invitation may not be valid</Text>
+            <Text fontSize={"2xl"} fontFamily={"NewSpiritMedium"} color={"white"}>Please reach out to Zafira or Danial.</Text>
+          </Box>
+        </VStack>
       </CommonModalContent>  }
     </Modal>
   );
