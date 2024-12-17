@@ -108,18 +108,26 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
         alignItems={"center"}
         ref={formRef}
         onSubmit={onFormSubmit}
-        backgroundColor={"#DD5D36"}
-        gap={2}
-        padding={5}
-        borderRadius={10}
-        pt="55px" pb="55px"
-        backgroundImage="/announcer_cat.png" 
-        backgroundSize="cover"
-        height="25em"
+        // backgroundColor={"#DD5D36"}
+        // gap={2}
+        // padding={5}
+        // borderRadius={20}
+        // pt="55px" pb="55px"
+        // backgroundImage="/background_rsvp.png" 
+        // backgroundSize="cover"
+        // height="25em"
       >
         <Box w="100%">
         <Collapse in={pageState === "0"}>
-          <VStack>
+          <VStack
+            padding={5}
+            borderRadius={20}
+            gap={2}
+            pt="55px" pb="55px"
+            // height="25em"
+            backgroundImage="/background_rsvp.png" 
+            backgroundSize="cover"
+          >
             <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
               {`Strolling down Menteng, trees always green`}
             </Text>
@@ -157,11 +165,17 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
           </VStack>
         </Collapse>
         <Collapse in={pageState === "1"}>
-          <VStack width="100%">
+          <VStack 
+            width="100%" 
+            backgroundColor={"#DD5D36"}
+            gap={2}
+            padding={5}
+            borderRadius={20}
+          >
             <IconButton
             aria-label="Back"
             icon={<Icon as={FaArrowLeft} boxSize={6} color={"white"} />}
-            bg={"#50657F"}
+            bg={"#183641"}
             isRound
             alignSelf="start"
             onClick={(e) => {
@@ -171,7 +185,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
             }}
             />
 
-            <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text textAlign="center" color="white" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}>
               {`Crowd size?`}
             </Text>
 
@@ -191,11 +205,18 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
           </VStack>
         </Collapse>
         <Collapse in={pageState === "2"}>
-          <VStack width="100%">
+          <VStack 
+            width="100%" 
+            backgroundImage="/background_wishes.png" 
+            backgroundSize="cover"
+            gap={2}
+            padding={5}
+            borderRadius={20}
+          >
             <IconButton
             aria-label="Back"
             icon={<Icon as={FaArrowLeft} boxSize={6} color={"white"} />}
-            bg={"#50657F"}
+            bg={"#183641"}
             isRound
             alignSelf="start"
             onClick={(e) => {
@@ -204,7 +225,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
               setPageState("0");
             }}
             />
-            <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text textAlign="center" color="white" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}>
               Send a message for the lovebirds!
             </Text>
 

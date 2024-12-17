@@ -28,7 +28,7 @@ const HeaderZD = ({ ...stackProps }: StackProps) => {
             <img
                 src="/logo_zd.png"
                 style={{
-                width: '65px', // Ukuran logo
+                width: '50px', // Ukuran logo
                 height: 'auto', 
                 }}
                 alt="Logo"

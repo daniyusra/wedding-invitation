@@ -13,7 +13,7 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
             backgroundPosition="center" 
             h="580px"
             display="flex"
-            paddingTop={'50px'}
+            paddingTop={'45px'}
             alignItems="center"
         >
             <Box>
@@ -23,7 +23,7 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                     width: '100px',       // Adjust line length
                     borderBottom: '1.5px solid #385A41', // Left line
                     marginBottom: '5px',
-                    marginRight: '20px' 
+                    marginRight: '30px' 
                     }}
                 />
                 <span style={{ 
@@ -31,14 +31,14 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                     color: '#385A41',
                     fontSize: "20px",
                     display: 'inline-block' 
-                }}>Date & Time</span>
+                }}>Time</span>
                 <span
                     style={{
                     display: 'inline-block',
                     width: '100px',       // Adjust line length
                     borderBottom: '1.5px solid #385A41', // Left line
                     marginBottom: '5px',
-                    marginLeft: '20px' 
+                    marginLeft: '30px' 
                     }}
                 />
             </Box>
@@ -57,14 +57,14 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                 <span style={{ fontFamily: "NewSpiritMedium", fontSize: '25px' }}>11.00 - 13.00</span>
             </Text>
             <Text color={'#385A41'} fontFamily="NewSpiritLight" size="xs">*Only for family members</Text>
-            <Box marginTop={'20px'}>
+            <Box marginTop={'30px'}>
                 <span
                     style={{
                     display: 'inline-block',
                     width: '100px',       // Adjust line length
                     borderBottom: '1.5px solid #385A41', // Left line
                     marginBottom: '5px',
-                    marginRight: '20px' 
+                    marginRight: '30px' 
                     }}
                 />
                 <span style={{ 
@@ -72,14 +72,14 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                     color: '#385A41',
                     fontSize: "20px",
                     display: 'inline-block' 
-                }}>Address</span>
+                }}>Place</span>
                 <span
                     style={{
                     display: 'inline-block',
                     width: '100px',       // Adjust line length
                     borderBottom: '1.5px solid #385A41', // Left line
                     marginBottom: '5px',
-                    marginLeft: '20px' 
+                    marginLeft: '30px' 
                     }}
                 />
             </Box>
