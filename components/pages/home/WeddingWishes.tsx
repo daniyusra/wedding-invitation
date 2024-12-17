@@ -45,7 +45,7 @@ const WeddingWishes = ({ displayName, ...stackProps }: WeddingWishesProps) => {
       <VStack
         h="40rem"
         gap={4}
-        marginTop="3"
+        // marginTop="3"
         backgroundColor={"#385A41"}
         padding={5}
         borderRadius={20}
