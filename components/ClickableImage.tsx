@@ -21,7 +21,7 @@ const ClickableImage = ({ src, alt, ...props } : { src: string; alt: string } & 
         _hover={{ transform: "scale(1.05)" }}
         transition="transform 0.2s"
       >
-        <Image src={src} alt={alt} {...props}/>
+        <Image src={src} alt={alt} {...props} borderRadius="15"/>
       </Box>
 
       <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
