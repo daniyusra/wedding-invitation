@@ -86,7 +86,7 @@ const HomePage = () => {
       <InvitationModal isOpen={isOpen} onClose={onClosePlayMusic} name={name} />
       <HomeContent name={name} shortName={shortName} hasPartner={partner} />
       <audio ref={audioRef} loop>
-        <source src="/cintaku-instrumental.mp3" type="audio/mpeg" />
+        <source src="https://github.com/zafirabinta/campuspedia_intern/raw/refs/heads/master/cintaku-instrumental-fix.mp3" type="audio/mpeg" />
         Your browser does not support the audio tag.
       </audio>
     </VStack>

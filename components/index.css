@@ -1,119 +1,119 @@
 /* index.css or your custom CSS file */
 @font-face {
     font-family: 'NewSpiritBoldItalic';
-    src: url('/fonts/New Spirit Bold Italic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/0vr4x0ka521p22rvww2yt/New-Spirit-Bold-Italic.ttf?rlkey=lh8nrgh7h117xk3qe0sbjqvm4&st=3xq0okwf') format('truetype');
+    /* font-weight: bold; */
+    /* font-style: italic; */
 }
   
 @font-face {
     font-family: 'NewSpiritBold';
-    src: url('/fonts/New Spirit Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/xgp280gfypfvkeyri900b/New-Spirit-Bold.ttf?rlkey=ruccab49ie9268tw7ur54er9s&st=ena0vpia&dl=0') format('truetype');
+    /* font-weight: bold;
+    font-style: normal; */
 }
   
 @font-face {
     font-family: 'NewSpiritLightCondensedItalic';
-    src: url('/fonts/New Spirit Light Condensed Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/rj038nezr51qg14e95esa/New-Spirit-Light-Condensed-Italic.ttf?rlkey=sohzlt8ahvni2m9l0iw9lzc49&st=99icg1hm&dl=0') format('truetype');
+    /* font-weight: normal; */
+    /* font-style: italic; */
 }
   
 @font-face {
     font-family: 'NewSpiritLightCondensed';
-    src: url('/fonts/New Spirit Light Condensed.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/ljvyon4ux9hde7u212i12/New-Spirit-Light-Condensed.ttf?rlkey=jklnlj4siexbr77j6it4e5yxy&st=ygkwwyt0&dl=0') format('truetype');
+    /* font-weight: normal;
+    font-style: normal; */
 }
   
 @font-face {
     font-family: 'NewSpiritLightItalic';
-    src: url('/fonts/New Spirit Light Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/07mezyfmt5ux54yukqirj/New-Spirit-Light-Italic.ttf?rlkey=9xytfaqsf7h36shse2fobw5mv&st=nsvkvaun&dl=0') format('truetype');
+    /* font-weight: normal; */
+    /* font-style: italic; */
 }
   
 @font-face {
     font-family: 'NewSpiritLight';
-    src: url('/fonts/New Spirit Light.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/aues84mzpdb8evmq4b2n2/New-Spirit-Light.ttf?rlkey=6j1mezxlqudp5771k8bne9hnv&st=jtofm6mk&dl=0') format('truetype');
+    /* font-weight: normal;
+    font-style: normal; */
 }
   
 @font-face {
     font-family: 'NewSpiritMediumCondensedItalic';
-    src: url('/fonts/New Spirit Medium Condensed Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/8jwr6r5nuk45sjvhda2bs/New-Spirit-Medium-Condensed-Italic.ttf?rlkey=noau2lrfxrrbm6bc0izmzhb4q&st=1m4spidl&dl=0') format('truetype');
+    /* font-weight: normal;
+    font-style: italic; */
 }
   
 @font-face {
     font-family: 'NewSpiritMediumCondensed';
-    src: url('/fonts/New Spirit Medium Condensed.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/9dw0p3ejd0o5hi799fkox/New-Spirit-Medium-Condensed.ttf?rlkey=ovxwg9f2gnkxlijdlv6ya5ieg&st=qgnhmmjl&dl=0') format('truetype');
+    /* font-weight: normal;
+    font-style: normal; */
 }
   
 @font-face {
     font-family: 'NewSpiritMediumItalic';
-    src: url('/fonts/New Spirit Medium Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/q4ryidg5msgexaalbtsyp/New-Spirit-Medium-Italic.ttf?rlkey=s2i4fn8wz2ahcqcsi1sgpllxk&st=qs1ztuva&dl=0') format('truetype');
+    /* font-weight: normal;
+    font-style: italic; */
 }
   
 @font-face {
     font-family: 'NewSpiritMedium';
-    src: url('/fonts/New Spirit Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/qx0dok4k88ojucntmiej9/New-Spirit-Medium.ttf?rlkey=jqs1ez5udzhqnqarg3lvcy9l8&st=q448fqwd&dl=0') format('truetype');
+    /* font-weight: normal;
+    font-style: normal; */
 }
   
 @font-face {
     font-family: 'NewSpiritRegularCondensedItalic';
-    src: url('/fonts/New Spirit Regular Condensed Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/de4unscssh568e9essov0/New-Spirit-Regular-Condensed-Italic.ttf?rlkey=0tufhszjfdh051b2eii9jen87&st=evtm7tn8&dl=0') format('truetype');
+    /* font-weight: normal;
+    font-style: italic; */
 }
   
 @font-face {
     font-family: 'NewSpiritRegularCondensed';
-    src: url('/fonts/New Spirit Regular Condensed.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/2ldk28w2ri7yfva7tsdnl/New-Spirit-Regular-Condensed.ttf?rlkey=iscy5vjuucg6yjukdnbr0kzoc&st=887dwlgo&dl=0') format('truetype');
+    /* font-weight: normal;
+    font-style: normal; */
 }
   
 @font-face {
     font-family: 'NewSpiritRegularItalic';
-    src: url('/fonts/New Spirit Regular Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/csnrat3b9ckecuktf4uld/New-Spirit-Regular-Italic.ttf?rlkey=u7hcm35uxymahwt7ox57s4qnj&st=p2do2cgr&dl=0') format('truetype');
+    /* font-weight: normal;
+    font-style: italic; */
 }
   
 @font-face {
     font-family: 'NewSpiritRegular';
-    src: url('/fonts/New Spirit Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/kkjpyy7l6c8c5uxugq1bn/New-Spirit-Regular.ttf?rlkey=haau2e7e5vhrqbnnkb19jgnci&st=loqagtxo&dl=0') format('truetype');
+    /* font-weight: normal;
+    font-style: normal; */
 }
   
 @font-face {
     font-family: 'NewSpiritSemiBoldCondensed';
-    src: url('/fonts/New Spirit SemiBold Condensed.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/0fq6f7yva1sawz78v0fc9/New-Spirit-SemiBold-Condensed.ttf?rlkey=15wg4nh2sdzw7m0haerzp20u9&st=9tgr8ysg&dl=0') format('truetype');
+    /* font-weight: bold;
+    font-style: normal; */
 }
   
 @font-face {
     font-family: 'NewSpiritSemiBoldItalic';
-    src: url('/fonts/New Spirit SemiBold Italic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/jiaf7wrp8d5u4a08kbkcc/New-Spirit-SemiBold-Italic.ttf?rlkey=yepyw0z7aczwdhigznte976ih&st=gra7quzf&dl=0') format('truetype');
+    /* font-weight: bold;
+    font-style: italic; */
 }
   
 @font-face {
     font-family: 'NewSpiritSemiBold';
-    src: url('/fonts/New Spirit SemiBold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+    src: url('https://dl.dropboxusercontent.com/scl/fi/peepx2l1m3bmbsrj3tswx/New-Spirit-SemiBold.ttf?rlkey=nsncr41fyyd7b8r07lxgiz3ux&st=7fmpls2e&dl=0') format('truetype');
+    /* font-weight: bold;
+    font-style: normal; */
 }
