@@ -41,7 +41,7 @@ const LandingPage = ({ ...stackProps }: StackProps) => {
               fontFamily: "NewSpiritBoldItalic",
               fontSize: "45px",
               color: '#dd5d36',
-              fontStyle: 'italic',
+              // fontStyle: 'italic',
               display: 'inline-block',
           }}>&</span>
           <span
