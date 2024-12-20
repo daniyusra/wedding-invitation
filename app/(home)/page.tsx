@@ -1,7 +1,8 @@
 "use client";
 
 import { InvitationModal } from "@/components/modals";
-import { VStack, useDisclosure } from "@chakra-ui/react";
+import { VStack, Button, useDisclosure, Icon } from "@chakra-ui/react";
+import { MdVolumeOff, MdVolumeUp } from "react-icons/md";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { setCookie, getCookie } from "cookies-next";
@@ -27,7 +28,8 @@ const HomePage = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [name, setName] = useState<string | undefined>(getCookie("name"));
   const [shortName, setShortName] = useState<string | undefined>(getCookie("shortName"));
-  const [partner, setPartner] = useState<boolean | undefined>(getCookie("partner") == "true" ? true : false);
+  const [partner, setPartner] = useState<boolean | undefined>(getCookie("partner") == "true");
+  const [isMuted, setIsMuted] = useState<boolean>(false); // State for mute/unmute
 
   const audioRef = useRef<HTMLAudioElement>(null);
 
@@ -59,7 +61,7 @@ const HomePage = () => {
       setCookie("shortName", displayShortName, cookieOptions);
     }
 
-    if (hasPartner){
+    if (hasPartner) {
       setPartner(hasPartner);
       setCookie("partner", "true", cookieOptions);
     }
@@ -81,14 +83,40 @@ const HomePage = () => {
     }
   };
 
+  const toggleMute = () => {
+    if (audioRef.current) {
+      audioRef.current.muted = !isMuted; // Toggle mute/unmute
+      setIsMuted(!isMuted); // Update state
+    }
+  };
+
   return (
-    <VStack minH="100vh" justifyContent={"center"} gap={0} overflowX={"hidden"}>
+    <VStack minH="100vh" justifyContent={"center"} gap={0} overflowX={"hidden"} bg="#183641">
       <InvitationModal isOpen={isOpen} onClose={onClosePlayMusic} name={name} />
       <HomeContent name={name} shortName={shortName} hasPartner={partner} />
+
+      {/* Audio Element */}
       <audio ref={audioRef} loop>
-        <source src="https://github.com/zafirabinta/campuspedia_intern/raw/refs/heads/master/cintaku-instrumental-fix.mp3" type="audio/mpeg" />
+        <source
+          src="https://github.com/zafirabinta/campuspedia_intern/raw/refs/heads/master/cintaku-instrumental-fix.mp3"
+          type="audio/mpeg"
+        />
         Your browser does not support the audio tag.
       </audio>
+
+      {/* Mute/Unmute Button */}
+      <Button 
+        onClick={toggleMute}
+        colorScheme="blue"
+        position="fixed"
+        bottom="20px"
+        right="35vw"
+        zIndex="1000"
+        borderRadius="full"
+        boxSize="50px"
+      >
+         <Icon as={isMuted ? MdVolumeOff : MdVolumeUp} w={6} h={6} color="white" />
+      </Button>
     </VStack>
   );
 };

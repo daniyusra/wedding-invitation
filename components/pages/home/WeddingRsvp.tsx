@@ -208,7 +208,8 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
           <VStack 
             width="100%" 
             backgroundImage="/background_wishes.png" 
-            backgroundSize="cover"
+            backgroundSize="120%"
+            backgroundPosition={'bottom'}
             gap={2}
             padding={5}
             borderRadius={20}
