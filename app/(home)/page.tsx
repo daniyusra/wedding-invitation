@@ -110,7 +110,7 @@ const HomePage = () => {
         colorScheme="blue"
         position="fixed"
         bottom="20px"
-        right="35vw"
+        right="20px"
         zIndex="1000"
         borderRadius="full"
         boxSize="50px"
