@@ -13,7 +13,7 @@ import {
 import { Gallery } from "@/components/pages/home/Gallery";
 import { WeddingRsvp } from "@/components/pages/home/WeddingRsvp";
 import { WeddingWishes } from "@/components/pages/home/WeddingWishes";
-import { VStack } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 
 const HomeContent = ({ name, shortName, hasPartner }: { name?: string; shortName?: string; hasPartner?: boolean }) => {
   return (
@@ -31,6 +31,7 @@ const HomeContent = ({ name, shortName, hasPartner }: { name?: string; shortName
       alignItems={"center"}
     >
       <HeaderZD />
+      <Box h={'36px'} />
       <Surah />
       <GuestName name={shortName}/>
       <LandingPage />

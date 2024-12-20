@@ -2,8 +2,20 @@ import { StackProps, Box } from "@chakra-ui/react";
 import 'components/index.css';
 
 const HeaderZD = ({ ...stackProps }: StackProps) => {
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
   return (
-    <Box bg="#183641" w="100%" paddingTop="20px">
+    <Box 
+        bg="#183641" w="35vw" paddingTop="10px" paddingBottom="10px"
+        cursor="pointer"
+        position="fixed" 
+        top="0" 
+        zIndex="1000"
+        onClick={scrollToTop} 
+        {...stackProps}
+    >
         <div
             style={{
             display: 'flex', // Menggunakan flexbox
