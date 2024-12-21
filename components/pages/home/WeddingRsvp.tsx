@@ -250,7 +250,11 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
           </VStack>
         </Collapse>
         <Collapse in={pageState === "submitted"}>
-          <VStack width="100%">
+          <VStack width="100%"
+            backgroundColor={"#DD5D36"}
+            gap={2}
+            padding={5}
+            borderRadius={20}>
             <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
               Thank you for your confirmation!
             </Text>
