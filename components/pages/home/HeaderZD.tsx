@@ -1,4 +1,4 @@
-import { StackProps, Box } from "@chakra-ui/react";
+import { StackProps, Box, Image } from "@chakra-ui/react";
 import 'components/index.css';
 
 const HeaderZD = ({ ...stackProps }: StackProps) => {
@@ -8,7 +8,7 @@ const HeaderZD = ({ ...stackProps }: StackProps) => {
 
   return (
     <Box 
-        bg="#183641" w="35vw" paddingTop="10px" paddingBottom="10px"
+        bg="#183641" w="100%" paddingTop="10px" paddingBottom="10px"
         cursor="pointer"
         position="fixed" 
         top="0" 
@@ -37,7 +37,7 @@ const HeaderZD = ({ ...stackProps }: StackProps) => {
                 margin: '0 20px', // Memberi jarak horizontal pada logo
             }}
             >
-            <img
+            <Image
                 src="/logo_zd.png"
                 style={{
                 width: '50px', // Ukuran logo

@@ -30,7 +30,7 @@ const HomeContent = ({ name, shortName, hasPartner }: { name?: string; shortName
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <HeaderZD />
+      <HeaderZD maxW={"lg"}/>
       <Box h={'36px'} />
       <Surah />
       <GuestName name={shortName}/>
