@@ -227,13 +227,13 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
               setPageState("0");
             }}
             />
-            <Text textAlign="center" color="white" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}>
-              Send a message for the lovebirds!
+            <Text textAlign="center" color="white" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}  mt="5">
+              Send an optional message for the lovebirds!
             </Text>
 
             <Textarea
             name="wishes"
-            placeholder={"Type your wishes for us, " + name + "! (optional)"}
+            placeholder={"Type your wishes for us, " + name + ", if any!"}
             w={[80, 96]}
             autoComplete={"off"}
             variant={"flushed"}
@@ -242,10 +242,11 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
             borderColor="white"
             _placeholder={{color:"gray.300"}}
             fontFamily={"NewSpiritRegular"}
+             mb="5"
             />
 
-            <Button type="submit" isLoading={loading} mt="3" alignSelf={"end"} backgroundColor="#DD5D36">
-              {loading ? "Sending..." : "Send"}
+            <Button type="submit" isLoading={loading} alignSelf={"center"} backgroundColor="white" color="#DD5D36">
+              {loading ? "Sending..." : "Confirm your RSVP"}
             </Button>  
           </VStack>
         </Collapse>
