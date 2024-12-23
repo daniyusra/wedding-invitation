@@ -9,9 +9,7 @@ const StreamingLink = ({ ...stackProps }: StackProps) => {
             bg="#BBBE33"
             borderRadius="20px"
             h="350px"  
-            paddingTop={'20px'}
-            paddingBottom={'20px'}
-            // p={'30px'}
+            p={'5'}
             alignItems="center"
         >
             <Text 
@@ -20,7 +18,6 @@ const StreamingLink = ({ ...stackProps }: StackProps) => {
                 color: 'white'
               }}
               fontSize={'xl'}
-              p={'10px'}
             >
               Join us in celebrating our special day
             </Text>
@@ -28,8 +25,8 @@ const StreamingLink = ({ ...stackProps }: StackProps) => {
             {/* Embed YouTube video */}
             <Box 
               as="iframe"
-              width="90%"
-              height="80%"  
+              width="100%"
+              height="100%"  
               src="https://www.youtube.com/embed/toAKi65WT-g?si=UQMN_bomApcQfLpD" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
