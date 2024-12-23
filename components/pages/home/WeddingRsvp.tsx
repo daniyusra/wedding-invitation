@@ -123,22 +123,22 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
             padding={5}
             borderRadius={20}
             gap={2}
-            pt="55px" pb="55px"
+            pt="50px" //pb="30px"
             // height="25em"
             backgroundImage="/background_rsvp.png" 
             backgroundSize="cover"
           >
             <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
-              {`Strolling down Menteng, trees always green`}
+              {`Strolling Menteng, trees are green`}
             </Text>
             <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
-              {`To sip coffee in the old town's charm`}
+              {`Coffee sipped with old-town charm`}
             </Text>  
             <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
-              {`To ` + shortName + ` dear to us you've been`}
+              {`To ` + shortName + `, so keen`}
             </Text>
             <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
-              {`Your presence would fill our hearts with warm`}
+              {`Your presence brings us warm`}
             </Text> 
 
             <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
