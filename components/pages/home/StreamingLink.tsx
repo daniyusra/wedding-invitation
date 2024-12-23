@@ -9,8 +9,9 @@ const StreamingLink = ({ ...stackProps }: StackProps) => {
             bg="#BBBE33"
             borderRadius="20px"
             h="350px"  
-            paddingTop={'30px'}
+            paddingTop={'20px'}
             paddingBottom={'20px'}
+            // p={'30px'}
             alignItems="center"
         >
             <Text 
@@ -19,7 +20,7 @@ const StreamingLink = ({ ...stackProps }: StackProps) => {
                 color: 'white'
               }}
               fontSize={'xl'}
-              paddingBottom={'10px'}
+              p={'10px'}
             >
               Join us in celebrating our special day
             </Text>
