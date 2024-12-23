@@ -19,6 +19,7 @@ const GuestName = ({ name, ...stackProps }: NamedStackProps) => {
         backgroundImage="/background_guestname.png" 
         backgroundSize="cover" 
         backgroundPosition="center"
+        p={'5'}
       >
         <Text textAlign="center" fontSize="2xl" color="#385a41">
           <span style={{ fontFamily: "NewSpiritLight" }}>Dear </span>
