@@ -8,7 +8,8 @@ import {
   GuestName,
   LandingPage,
   TimePlace,
-  Surah
+  Surah,
+  StreamingLink
 } from "@/components/pages/home";
 import { Gallery } from "@/components/pages/home/Gallery";
 import { WeddingRsvp } from "@/components/pages/home/WeddingRsvp";
@@ -37,6 +38,7 @@ const HomeContent = ({ name, shortName, hasPartner }: { name?: string; shortName
       <LandingPage />
       <TimePlace />
       <Gallery />
+      <StreamingLink />
       <WeddingRsvp displayName={name} displayShortName={shortName} hasPartner={hasPartner}/>
       <WeddingWishes displayName={name} />
     </VStack>

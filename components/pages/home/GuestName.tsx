@@ -20,13 +20,12 @@ const GuestName = ({ name, ...stackProps }: NamedStackProps) => {
         backgroundSize="cover" 
         backgroundPosition="center"
       >
-        <Text textAlign="center" fontSize="25px" color="#385a41">
+        <Text textAlign="center" fontSize="2xl" color="#385a41">
           <span style={{ fontFamily: "NewSpiritLight" }}>Dear </span>
           <span style={{ fontFamily: "NewSpiritBoldItalic" }}>{name}</span>
           <span style={{ fontFamily: "NewSpiritLight" }}>,</span>
         </Text >
-          <Text style={{ 
-              fontSize: "23px", 
+          <Text fontSize={'xl'} style={{  
               fontFamily: "NewSpiritLight",
               color: "#385a41"
           }}>we want you to come to </Text>

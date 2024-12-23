@@ -12,3 +12,4 @@ export * from "./LandingPage";
 export * from "./TimePlace";
 export * from "./Surah";
 export * from "./AudioPlay";
+export * from "./StreamingLink";
