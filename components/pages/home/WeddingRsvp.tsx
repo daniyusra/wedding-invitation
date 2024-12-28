@@ -21,9 +21,10 @@ type WeddingRsvpProps = {
   displayName?: string;
   displayShortName?: string;
   hasPartner?: boolean;
+  isGroup?: boolean;
 } & StackProps;
 
-const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps }: WeddingRsvpProps) => {
+const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...stackProps }: WeddingRsvpProps) => {
   const POST_URL = process.env.NEXT_PUBLIC_WEDDING_WISHES_POST as string;
   const GET_URL = process.env.NEXT_PUBLIC_WEDDING_WISHES_GET as string;
   
@@ -31,8 +32,10 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
 
   const toast = useToast();
 
-  const [name, setName] = useState<string>(displayName || "");
+  const [name, setName] = useState<string>(isGroup ? "" : displayName || "");
   const [shortName, setShortName] = useState<string>(displayShortName || "");
+  const [groupMemberName, setGroupMemberName] = useState<string>("");
+
   const [loading, setLoading] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const [data, setData] = useState<any[]>();
@@ -108,14 +111,6 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
         alignItems={"center"}
         ref={formRef}
         onSubmit={onFormSubmit}
-        // backgroundColor={"#DD5D36"}
-        // gap={2}
-        // padding={5}
-        // borderRadius={20}
-        // pt="55px" pb="55px"
-        // backgroundImage="/background_rsvp.png" 
-        // backgroundSize="cover"
-        // height="25em"
       >
         <Box w="100%">
         <Collapse in={pageState === "0"}>
@@ -123,8 +118,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
             padding={5}
             borderRadius={20}
             gap={2}
-            pt="50px" //pb="30px"
-            // height="25em"
+            pt="55px" pb="55px"
             backgroundImage="/background_rsvp.png" 
             backgroundSize="cover"
           >
@@ -148,9 +142,8 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
                 } else {
                   setAttend("1");
                   setTotal("1");
-                  setPageState("2");
+                  setPageState(isGroup ? "2" : "finish");
                 }
-                
               }}>
               <span color="#DD5D36">We will certainly come!</span>
             </Button>
@@ -158,7 +151,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
             <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
                 setAttend("0");
                 setTotal("");
-                setPageState("2");
+                setPageState(isGroup ? "2" : "finish");
               }}>
               <span color="#DD5D36">We cannot make it.</span>
             </Button>  
@@ -191,20 +184,20 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
 
             <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
                 setTotal("1");
-                setPageState("2");
+                setPageState(isGroup ? "2" : "finish");
               }}>
               <span color="#DD5D36">Just me!</span>
             </Button>
 
             <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
                 setTotal("2");
-                setPageState("2");
+                setPageState(isGroup ? "2" : "finish");
               }}>
               <span color="#DD5D36">I will bring a plus one!</span>
             </Button>  
           </VStack>
         </Collapse>
-        <Collapse in={pageState === "2"}>
+        <Collapse in={pageState === "finish"}>
           <VStack 
             width="100%" 
             backgroundImage="/background_wishes.png" 
@@ -247,6 +240,38 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
 
             <Button type="submit" isLoading={loading} alignSelf={"center"} backgroundColor="white" color="#DD5D36">
               {loading ? "Sending..." : "Confirm your RSVP"}
+            </Button>  
+          </VStack>
+        </Collapse>
+        <Collapse in={pageState === "2"}>
+          <VStack 
+              width="100%" 
+              backgroundColor={"#DD5D36"}
+              gap={2}
+              padding={5}
+              borderRadius={20}
+            >
+            <Text textAlign="center" color="white" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}>
+              Can we get a name?
+            </Text>
+
+            <Input name="wishes" placeholder="Your name" onChange={(e) => {
+              setName(e.target.value);
+            }} onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+            mt="3"
+            variant={"flushed"}
+            color="white"
+            focusBorderColor="white"
+            borderColor="white"
+            _placeholder={{color:"gray.300"}}
+            fontFamily={"NewSpiritRegular"}
+            w={[80, 96]}
+            />
+
+            <Button type="button" backgroundColor="white" color="#DD5D36" mt="3" isDisabled={!name.trim()} onClick={(e) => {
+                setPageState("finish");
+              }}>
+              {"Next"}
             </Button>  
           </VStack>
         </Collapse>

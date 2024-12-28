@@ -16,7 +16,7 @@ import { WeddingRsvp } from "@/components/pages/home/WeddingRsvp";
 import { WeddingWishes } from "@/components/pages/home/WeddingWishes";
 import { Box, VStack } from "@chakra-ui/react";
 
-const HomeContent = ({ name, shortName, hasPartner }: { name?: string; shortName?: string; hasPartner?: boolean }) => {
+const HomeContent = ({ name, shortName, hasPartner, isGroup } : { name?: string; shortName?: string; hasPartner?: boolean; isGroup?: boolean }) => {
   return (
     <VStack
       maxW={"lg"}
@@ -39,7 +39,7 @@ const HomeContent = ({ name, shortName, hasPartner }: { name?: string; shortName
       <TimePlace />
       <Gallery />
       <StreamingLink />
-      <WeddingRsvp displayName={name} displayShortName={shortName} hasPartner={hasPartner}/>
+      <WeddingRsvp displayName={name} displayShortName={shortName} hasPartner={hasPartner} isGroup={isGroup}/>
       <WeddingWishes displayName={name} />
     </VStack>
   );
