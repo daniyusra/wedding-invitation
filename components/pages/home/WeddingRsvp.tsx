@@ -152,7 +152,9 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
                 }
                 
               }}>
-              <span color="#DD5D36">We will certainly come!</span>
+              <span color="#DD5D36">
+                {hasPartner ? "We will certainly come!" : "I will certainly come!"}
+              </span>
             </Button>
 
             <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
@@ -160,7 +162,9 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
                 setTotal("");
                 setPageState("2");
               }}>
-              <span color="#DD5D36">We cannot make it.</span>
+              <span color="#DD5D36">
+                {hasPartner ? "We cannot make it." : "I cannot make it."}
+              </span>
             </Button>  
           </VStack>
         </Collapse>
