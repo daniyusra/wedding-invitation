@@ -12,18 +12,21 @@ import {
   useToast,
   Collapse,
   IconButton,
-  Icon, 
+  Icon,
+  Divider, 
 } from "@chakra-ui/react";
 import { BoxTransition } from "@/components/BoxTransition";
 import { FaArrowLeft } from "react-icons/fa6";
+import { Title } from "@/components/Title";
 
 type WeddingRsvpProps = {
   displayName?: string;
   displayShortName?: string;
   hasPartner?: boolean;
+  isGroup?: boolean;
 } & StackProps;
 
-const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps }: WeddingRsvpProps) => {
+const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...stackProps }: WeddingRsvpProps) => {
   const POST_URL = process.env.NEXT_PUBLIC_WEDDING_WISHES_POST as string;
   const GET_URL = process.env.NEXT_PUBLIC_WEDDING_WISHES_GET as string;
   
@@ -31,13 +34,17 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
 
   const toast = useToast();
 
-  const [name, setName] = useState<string>(displayName || "");
+  const [name, setName] = useState<string>(isGroup ? "" : displayName || "");
   const [shortName, setShortName] = useState<string>(displayShortName || "");
+
   const [loading, setLoading] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
-  const [data, setData] = useState<any[]>();
+  const [data, setData] = useState<any[]>([]);
   const [attend, setAttend] = useState<string>("");
   const [total, setTotal] = useState<string>("");
+  const [visibleCount, setVisibleCount] = useState(10); // Initial number of items to display
+  const containerRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     if (displayName) setName(displayName);
@@ -100,6 +107,18 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
       );
   };
 
+  
+  // Handle infinite scroll
+  const handleScroll = () => {
+    if (containerRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
+      if (scrollTop + clientHeight >= scrollHeight - 20) {
+        // Load more items when nearing the bottom
+        setVisibleCount((prev) => prev + 10);
+      }
+    }
+  };
+
   return (
     <BoxTransition gap={[3, 5]} zIndex={1} {...stackProps} w="90%">
       <VStack
@@ -108,14 +127,6 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
         alignItems={"center"}
         ref={formRef}
         onSubmit={onFormSubmit}
-        // backgroundColor={"#DD5D36"}
-        // gap={2}
-        // padding={5}
-        // borderRadius={20}
-        // pt="55px" pb="55px"
-        // backgroundImage="/background_rsvp.png" 
-        // backgroundSize="cover"
-        // height="25em"
       >
         <Box w="100%">
         <Collapse in={pageState === "0"}>
@@ -123,8 +134,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
             padding={5}
             borderRadius={20}
             gap={2}
-            pt="50px" //pb="30px"
-            // height="25em"
+            pt="55px" pb="55px"
             backgroundImage="/background_rsvp.png" 
             backgroundSize="cover"
           >
@@ -148,9 +158,8 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
                 } else {
                   setAttend("1");
                   setTotal("1");
-                  setPageState("2");
+                  setPageState(isGroup ? "2" : "finish");
                 }
-                
               }}>
               <span color="#DD5D36">We will certainly come!</span>
             </Button>
@@ -158,7 +167,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
             <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
                 setAttend("0");
                 setTotal("");
-                setPageState("2");
+                setPageState(isGroup ? "2" : "finish");
               }}>
               <span color="#DD5D36">We cannot make it.</span>
             </Button>  
@@ -191,14 +200,14 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
 
             <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
                 setTotal("1");
-                setPageState("2");
+                setPageState(isGroup ? "2" : "finish");
               }}>
               <span color="#DD5D36">Just me!</span>
             </Button>
 
             <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
                 setTotal("2");
-                setPageState("2");
+                setPageState(isGroup ? "2" : "finish");
               }}>
               <span color="#DD5D36">I will bring a plus one!</span>
             </Button>  
@@ -206,11 +215,44 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
         </Collapse>
         <Collapse in={pageState === "2"}>
           <VStack 
+              width="100%" 
+              backgroundColor={"#DD5D36"}
+              gap={2}
+              padding={5}
+              borderRadius={20}
+            >
+            <Text textAlign="center" color="white" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}>
+              Can we get a name?
+            </Text>
+
+            <Input placeholder="Your name" onChange={(e) => {
+              setName(e.target.value);
+            }} onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+            mt="3"
+            variant={"flushed"}
+            color="white"
+            focusBorderColor="white"
+            borderColor="white"
+            _placeholder={{color:"gray.300"}}
+            fontFamily={"NewSpiritRegular"}
+            w={[80, 96]}
+            />
+
+            <Button type="button" backgroundColor="white" color="#DD5D36" mt="3" isDisabled={!name.trim()} onClick={(e) => {
+                setPageState("finish");
+              }}>
+              {"Next"}
+            </Button>  
+          </VStack>
+        </Collapse>
+        <Collapse in={pageState === "finish"}>
+          <VStack 
             width="100%" 
             backgroundImage="/background_wishes.png" 
             backgroundSize="cover" 
             backgroundPosition="right bottom" 
             backgroundRepeat="no-repeat" 
+            backgroundColor={"#DD5D36"}
             gap={2}
             padding={5}
             borderRadius={20}
@@ -309,6 +351,58 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, ...stackProps 
               <option value="1">1</option>
               <option value="2">2</option>
             </Select>
+          )}
+        </Box>
+      </VStack>
+
+      <VStack
+        h="40rem"
+        gap={4}
+        marginTop="2em"
+        backgroundColor={"#385A41"}
+        padding={5}
+        borderRadius={20}
+      >
+        <Title color="white">{`Your blessings & greetings`}</Title>
+        <Box
+          w="100%"
+          overflowY={"scroll"}
+          ref={containerRef}
+          onScroll={handleScroll}
+        >
+          {data.slice(0, visibleCount).map(
+            (d: any, i) =>
+              d.wishes?.trim() && (
+                <VStack key={i} gap={1} w="full" padding="5">
+                  <Text
+                    w="full"
+                    textAlign={"justify"}
+                    fontSize={"sm"}
+                    fontWeight={"light"}
+                    color="#c2ccc4"
+                    fontFamily={"NewSpiritRegular"}
+                    mb={1}
+                  >
+                    {d.wishes}
+                  </Text>
+                  <Text
+                    w="full"
+                    fontWeight={700}
+                    fontSize={"sm"}
+                    align={"right"}
+                    color={"#BBBE33"}
+                    fontFamily={"NewSpiritLight"}
+                  >
+                    {d.name}
+                  </Text>
+                  <Divider
+                    w="full"
+                    borderColor={"#BBBE33"}
+                    borderWidth={1}
+                    marginX={"auto"}
+                  />
+                </VStack>
+              )
           )}
         </Box>
       </VStack>

@@ -29,6 +29,7 @@ const HomePage = () => {
   const [name, setName] = useState<string | undefined>(getCookie("name"));
   const [shortName, setShortName] = useState<string | undefined>(getCookie("shortName"));
   const [partner, setPartner] = useState<boolean | undefined>(getCookie("partner") == "true");
+  const [isGroup, setIsGroup] = useState<boolean | undefined>(getCookie("isGroup") == "true");
   const [isMuted, setIsMuted] = useState<boolean>(false); // State for mute/unmute
 
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -50,20 +51,28 @@ const HomePage = () => {
     const hasPartner = query.get("p") === "1";
     const displayName = getDisplayName({ to, gender, married, hasPartner, nicknameOnly: false});
     const displayShortName = getDisplayName({ to, gender, married, hasPartner, nicknameOnly: true});
+    const isGroup = query.get("gr") === "1";
 
-    if (displayName) {
-      setName(displayName);
-      setCookie("name", displayName, cookieOptions);
-    }
-
-    if (displayShortName) {
-      setShortName(displayShortName);
-      setCookie("shortName", displayShortName, cookieOptions);
-    }
-
-    if (hasPartner) {
-      setPartner(hasPartner);
-      setCookie("partner", "true", cookieOptions);
+    if (isGroup){
+      setIsGroup(isGroup);
+      setCookie("isGroup", "true", cookieOptions);
+      setName(to ? to : "");
+      setShortName(to ? to : "");
+    } else {
+      if (displayName) {
+        setName(displayName);
+        setCookie("name", displayName, cookieOptions);
+      }
+  
+      if (displayShortName) {
+        setShortName(displayShortName);
+        setCookie("shortName", displayShortName, cookieOptions);
+      }
+  
+      if (hasPartner) {
+        setPartner(hasPartner);
+        setCookie("partner", "true", cookieOptions);
+      }
     }
   }, [query, cookieOptions]);
 
@@ -93,7 +102,7 @@ const HomePage = () => {
   return (
     <VStack minH="100vh" justifyContent={"center"} gap={0} overflowX={"hidden"} bg="#183641">
       <InvitationModal isOpen={isOpen} onClose={onClosePlayMusic} name={name} />
-      <HomeContent name={name} shortName={shortName} hasPartner={partner} />
+      <HomeContent name={name} shortName={shortName} hasPartner={partner} isGroup={isGroup}/>
 
       {/* Audio Element */}
       <audio ref={audioRef} loop>
