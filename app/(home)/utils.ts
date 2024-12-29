@@ -20,7 +20,7 @@ const getDisplayName = ({
 
   if (nicknameOnly){
     target = target.split(" ")[0];
-    partnerName = partnerName.split(" ")[0];
+    if (partnerName) partnerName = partnerName.split(" ")[0];
   }
 
   if (gender === "f") {
