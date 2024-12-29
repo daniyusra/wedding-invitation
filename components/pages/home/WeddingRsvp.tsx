@@ -12,10 +12,12 @@ import {
   useToast,
   Collapse,
   IconButton,
-  Icon, 
+  Icon,
+  Divider, 
 } from "@chakra-ui/react";
 import { BoxTransition } from "@/components/BoxTransition";
 import { FaArrowLeft } from "react-icons/fa6";
+import { Title } from "@/components/Title";
 
 type WeddingRsvpProps = {
   displayName?: string;
@@ -34,13 +36,15 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
 
   const [name, setName] = useState<string>(isGroup ? "" : displayName || "");
   const [shortName, setShortName] = useState<string>(displayShortName || "");
-  const [groupMemberName, setGroupMemberName] = useState<string>("");
 
   const [loading, setLoading] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
-  const [data, setData] = useState<any[]>();
+  const [data, setData] = useState<any[]>([]);
   const [attend, setAttend] = useState<string>("");
   const [total, setTotal] = useState<string>("");
+  const [visibleCount, setVisibleCount] = useState(10); // Initial number of items to display
+  const containerRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     if (displayName) setName(displayName);
@@ -101,6 +105,18 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
       .catch((e) =>
         toast({ description: e.message, status: "error", isClosable: true })
       );
+  };
+
+  
+  // Handle infinite scroll
+  const handleScroll = () => {
+    if (containerRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
+      if (scrollTop + clientHeight >= scrollHeight - 20) {
+        // Load more items when nearing the bottom
+        setVisibleCount((prev) => prev + 10);
+      }
+    }
   };
 
   return (
@@ -197,6 +213,38 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
             </Button>  
           </VStack>
         </Collapse>
+        <Collapse in={pageState === "2"}>
+          <VStack 
+              width="100%" 
+              backgroundColor={"#DD5D36"}
+              gap={2}
+              padding={5}
+              borderRadius={20}
+            >
+            <Text textAlign="center" color="white" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}>
+              Can we get a name?
+            </Text>
+
+            <Input placeholder="Your name" onChange={(e) => {
+              setName(e.target.value);
+            }} onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+            mt="3"
+            variant={"flushed"}
+            color="white"
+            focusBorderColor="white"
+            borderColor="white"
+            _placeholder={{color:"gray.300"}}
+            fontFamily={"NewSpiritRegular"}
+            w={[80, 96]}
+            />
+
+            <Button type="button" backgroundColor="white" color="#DD5D36" mt="3" isDisabled={!name.trim()} onClick={(e) => {
+                setPageState("finish");
+              }}>
+              {"Next"}
+            </Button>  
+          </VStack>
+        </Collapse>
         <Collapse in={pageState === "finish"}>
           <VStack 
             width="100%" 
@@ -204,6 +252,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
             backgroundSize="cover" 
             backgroundPosition="right bottom" 
             backgroundRepeat="no-repeat" 
+            backgroundColor={"#DD5D36"}
             gap={2}
             padding={5}
             borderRadius={20}
@@ -240,38 +289,6 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
 
             <Button type="submit" isLoading={loading} alignSelf={"center"} backgroundColor="white" color="#DD5D36">
               {loading ? "Sending..." : "Confirm your RSVP"}
-            </Button>  
-          </VStack>
-        </Collapse>
-        <Collapse in={pageState === "2"}>
-          <VStack 
-              width="100%" 
-              backgroundColor={"#DD5D36"}
-              gap={2}
-              padding={5}
-              borderRadius={20}
-            >
-            <Text textAlign="center" color="white" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}>
-              Can we get a name?
-            </Text>
-
-            <Input name="wishes" placeholder="Your name" onChange={(e) => {
-              setName(e.target.value);
-            }} onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
-            mt="3"
-            variant={"flushed"}
-            color="white"
-            focusBorderColor="white"
-            borderColor="white"
-            _placeholder={{color:"gray.300"}}
-            fontFamily={"NewSpiritRegular"}
-            w={[80, 96]}
-            />
-
-            <Button type="button" backgroundColor="white" color="#DD5D36" mt="3" isDisabled={!name.trim()} onClick={(e) => {
-                setPageState("finish");
-              }}>
-              {"Next"}
             </Button>  
           </VStack>
         </Collapse>
@@ -334,6 +351,58 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
               <option value="1">1</option>
               <option value="2">2</option>
             </Select>
+          )}
+        </Box>
+      </VStack>
+
+      <VStack
+        h="40rem"
+        gap={4}
+        marginTop="2em"
+        backgroundColor={"#385A41"}
+        padding={5}
+        borderRadius={20}
+      >
+        <Title color="white">{`Your blessings & greetings`}</Title>
+        <Box
+          w="100%"
+          overflowY={"scroll"}
+          ref={containerRef}
+          onScroll={handleScroll}
+        >
+          {data.slice(0, visibleCount).map(
+            (d: any, i) =>
+              d.wishes?.trim() && (
+                <VStack key={i} gap={1} w="full" padding="5">
+                  <Text
+                    w="full"
+                    textAlign={"justify"}
+                    fontSize={"sm"}
+                    fontWeight={"light"}
+                    color="#c2ccc4"
+                    fontFamily={"NewSpiritRegular"}
+                    mb={1}
+                  >
+                    {d.wishes}
+                  </Text>
+                  <Text
+                    w="full"
+                    fontWeight={700}
+                    fontSize={"sm"}
+                    align={"right"}
+                    color={"#BBBE33"}
+                    fontFamily={"NewSpiritLight"}
+                  >
+                    {d.name}
+                  </Text>
+                  <Divider
+                    w="full"
+                    borderColor={"#BBBE33"}
+                    borderWidth={1}
+                    marginX={"auto"}
+                  />
+                </VStack>
+              )
           )}
         </Box>
       </VStack>
