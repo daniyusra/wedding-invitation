@@ -17,7 +17,8 @@ const StreamingLink = ({ ...stackProps }: StackProps) => {
                 fontFamily: "NewSpiritMedium",
                 color: 'white'
               }}
-              fontSize={'xl'}
+              fontSize={'lg'}
+              textAlign={'center'}
             >
               Join us in celebrating our special day
             </Text>
