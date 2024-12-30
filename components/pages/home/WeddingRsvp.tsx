@@ -162,7 +162,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
                 }
               }}>
               <span color="#DD5D36">
-                {hasPartner ? "We will certainly come!" : "I will certainly come!"}
+                {(hasPartner || isGroup) ? "We will certainly come!" : "I will certainly come!"}
               </span>
             </Button>
 
@@ -172,7 +172,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
                 setPageState(isGroup ? "2" : "finish");
               }}>
               <span color="#DD5D36">
-                {hasPartner ? "We cannot make it." : "I cannot make it."}
+                {(hasPartner || isGroup) ? "We cannot make it." : "I cannot make it."}
               </span>
             </Button>  
           </VStack>
