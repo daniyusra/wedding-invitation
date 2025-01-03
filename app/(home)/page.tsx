@@ -26,10 +26,10 @@ const HomePage = () => {
 
   const query = useSearchParams();
   const { isOpen, onClose, onOpen } = useDisclosure();
-  const [name, setName] = useState<string | undefined>(getCookie("name"));
-  const [shortName, setShortName] = useState<string | undefined>(getCookie("shortName"));
-  const [partner, setPartner] = useState<boolean | undefined>(getCookie("partner") == "true");
-  const [isGroup, setIsGroup] = useState<boolean | undefined>(getCookie("isGroup") == "true");
+  const [name, setName] = useState<string | undefined>();
+  const [shortName, setShortName] = useState<string | undefined>();
+  const [partner, setPartner] = useState<boolean | undefined>(false);
+  const [isGroup, setIsGroup] = useState<boolean | undefined>(false);
   const [isMuted, setIsMuted] = useState<boolean>(false); // State for mute/unmute
 
   const audioRef = useRef<HTMLAudioElement>(null);
