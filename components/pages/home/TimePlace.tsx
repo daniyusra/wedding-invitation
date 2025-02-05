@@ -11,7 +11,7 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
             backgroundImage="/background_timeplace.png" 
             backgroundSize="cover" 
             backgroundPosition="center" 
-            h="540px"
+            h="545px"
             display="flex"
             paddingTop={'45px'}
             alignItems="center"
