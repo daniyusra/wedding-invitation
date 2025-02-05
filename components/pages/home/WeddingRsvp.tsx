@@ -220,12 +220,12 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
         <Collapse in={pageState === "2"}>
           <VStack 
               width="100%" 
-              backgroundColor={"#DD5D36"}
+              backgroundColor={"#f6ecdf"}
               gap={2}
               padding={5}
               borderRadius={20}
             >
-            <Text textAlign="center" color="white" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text textAlign="center" color="#eaa637" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}>
               Can we get a name?
             </Text>
 
@@ -234,15 +234,15 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
             }} onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
             mt="3"
             variant={"flushed"}
-            color="white"
-            focusBorderColor="white"
-            borderColor="white"
+            color="#2d2d2d"
+            focusBorderColor="#2d2d2d"
+            borderColor="#2d2d2d"
             _placeholder={{color:"gray.300"}}
             fontFamily={"NewSpiritRegular"}
             w={[80, 96]}
             />
 
-            <Button type="button" backgroundColor="white" color="#DD5D36" mt="3" isDisabled={!name.trim()} onClick={(e) => {
+            <Button type="button" backgroundColor="#eaa637" color="#2d2d2d" mt="3" isDisabled={!name.trim()} onClick={(e) => {
                 setPageState("finish");
               }}>
               {"Next"}
@@ -256,7 +256,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
             backgroundSize="cover" 
             backgroundPosition="right bottom" 
             backgroundRepeat="no-repeat" 
-            backgroundColor={"#DD5D36"}
+            backgroundColor={"#f6ecdf"}
             gap={2}
             padding={5}
             borderRadius={20}
