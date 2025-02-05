@@ -35,7 +35,7 @@ const Gallery = ({ ...stackProps }: StackProps) => {
           alignItems="center"
           borderRadius="20px"
         >
-          <Text textAlign="center" color="#385a41" style={{ fontFamily: "NewSpiritSemiBold", marginTop: "5"}} fontSize={["xl", "2xl"]}>
+          <Text textAlign="center" color="#eaa637" style={{ fontFamily: "NewSpiritSemiBold", marginTop: "5"}} fontSize={["xl", "2xl"]}>
             A love story, in portraits
           </Text>
           <Box overflowX="scroll" marginTop="5" ref={boxRef}>

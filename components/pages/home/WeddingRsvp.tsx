@@ -138,20 +138,20 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
             backgroundImage="/background_rsvp.png" 
             backgroundSize="cover"
           >
-            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text textAlign="center"  color="#eaa637" style={{ fontFamily: "NewSpiritSemiBold" }}>
               {`Strolling Menteng, trees are green`}
             </Text>
-            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text textAlign="center"  color="#eaa637" style={{ fontFamily: "NewSpiritSemiBold" }}>
               {`Coffee sipped with old-town charm`}
             </Text>  
-            <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text textAlign="center" color="#eaa637" style={{ fontFamily: "NewSpiritSemiBold" }}>
               {`To ` + shortName + `, so keen`}
             </Text>
-            <Text textAlign="center"  color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text textAlign="center"  color="#eaa637" style={{ fontFamily: "NewSpiritSemiBold" }}>
               {`Your presence brings us warm`}
             </Text> 
 
-            <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
+            <Button type="button" mt="3" backgroundColor="#eaa637" borderRadius="20px" w="90%" color="#2d2d2d" onClick={(e) => {
                 if (hasPartner){
                   setAttend("1");
                   setPageState("1");
@@ -161,17 +161,17 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
                   setPageState(isGroup ? "2" : "finish");
                 }
               }}>
-              <span color="#DD5D36">
+              <span color="#2d2d2d">
                 {(hasPartner || isGroup) ? "We will certainly come!" : "I will certainly come!"}
               </span>
             </Button>
 
-            <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
+            <Button type="button" mt="3" backgroundColor="#eaa637" borderRadius="20px" w="90%" color="#2d2d2d" onClick={(e) => {
                 setAttend("0");
                 setTotal("");
                 setPageState(isGroup ? "2" : "finish");
               }}>
-              <span color="#DD5D36">
+              <span color="#2d2d2d">
                 {(hasPartner || isGroup) ? "We cannot make it." : "I cannot make it."}
               </span>
             </Button>  
@@ -180,7 +180,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
         <Collapse in={pageState === "1"}>
           <VStack 
             width="100%" 
-            backgroundColor={"#DD5D36"}
+            backgroundColor={"#f6ecdf"}
             gap={2}
             padding={5}
             borderRadius={20}
@@ -188,7 +188,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
             <IconButton
             aria-label="Back"
             icon={<Icon as={FaArrowLeft} boxSize={6} color={"white"} />}
-            bg={"#183641"}
+            bg={"#2d2d2d"}
             isRound
             alignSelf="start"
             onClick={(e) => {
@@ -198,22 +198,22 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
             }}
             />
 
-            <Text textAlign="center" color="white" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text textAlign="center" color="#2d2d2d" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}>
               {`Crowd size?`}
             </Text>
 
-            <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
+            <Button type="button" mt="3" backgroundColor="#eaa637" borderRadius="20px" w="90%" color="#2d2d2d" onClick={(e) => {
                 setTotal("1");
                 setPageState(isGroup ? "2" : "finish");
               }}>
-              <span color="#DD5D36">Just me!</span>
+              <span color="#2d2d2d">Just me!</span>
             </Button>
 
-            <Button type="button" mt="3" backgroundColor="white" borderRadius="20px" w="90%" color="#DD5D36" onClick={(e) => {
+            <Button type="button" mt="3" backgroundColor="#eaa637" borderRadius="20px" w="90%" color="#2d2d2d" onClick={(e) => {
                 setTotal("2");
                 setPageState(isGroup ? "2" : "finish");
               }}>
-              <span color="#DD5D36">I will bring a plus one!</span>
+              <span color="#2d2d2d">I will bring a plus one!</span>
             </Button>  
           </VStack>
         </Collapse>
@@ -264,7 +264,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
             <IconButton
             aria-label="Back"
             icon={<Icon as={FaArrowLeft} boxSize={6} color={"white"} />}
-            bg={"#183641"}
+            bg={"#2d2d2d"}
             isRound
             alignSelf="start"
             onClick={(e) => {
@@ -273,7 +273,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
               setPageState("0");
             }}
             />
-            <Text textAlign="center" color="white" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}  mt="5">
+            <Text textAlign="center" color="#2d2d2d" fontSize={'xl'} style={{ fontFamily: "NewSpiritSemiBold" }}  mt="5">
               Send an optional message for the lovebirds!
             </Text>
 
@@ -283,26 +283,26 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
             w={[80, 96]}
             autoComplete={"off"}
             variant={"flushed"}
-            color="white"
-            focusBorderColor="white"
-            borderColor="white"
-            _placeholder={{color:"gray.300"}}
+            color="#2d2d2d"
+            focusBorderColor="#2d2d2d"
+            borderColor="#2d2d2d"
+            _placeholder={{color:"aa780c"}}
             fontFamily={"NewSpiritRegular"}
              mb="5"
             />
 
-            <Button type="submit" isLoading={loading} alignSelf={"center"} backgroundColor="white" color="#DD5D36">
+            <Button type="submit" isLoading={loading} alignSelf={"center"} backgroundColor="#eaa637" color="#2d2d2d">
               {loading ? "Sending..." : "Confirm your RSVP"}
             </Button>  
           </VStack>
         </Collapse>
         <Collapse in={pageState === "submitted"}>
           <VStack width="100%"
-            backgroundColor={"#DD5D36"}
+            backgroundColor={"#eaa637"}
             gap={2}
             padding={5}
             borderRadius={20}>
-            <Text textAlign="center" color="white" style={{ fontFamily: "NewSpiritSemiBold" }}>
+            <Text textAlign="center" color="#2d2d2d" style={{ fontFamily: "NewSpiritSemiBold" }}>
               Thank you for your confirmation!
             </Text>
           </VStack>
@@ -363,7 +363,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
         h="40rem"
         gap={4}
         marginTop="2em"
-        backgroundColor={"#385A41"}
+        backgroundColor={"#aa780c"}
         padding={5}
         borderRadius={20}
       >
@@ -394,14 +394,14 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
                     fontWeight={700}
                     fontSize={"sm"}
                     align={"right"}
-                    color={"#BBBE33"}
+                    color={"#eaa637"}
                     fontFamily={"NewSpiritLight"}
                   >
                     {d.name}
                   </Text>
                   <Divider
                     w="full"
-                    borderColor={"#BBBE33"}
+                    borderColor={"#eaa637"}
                     borderWidth={1}
                     marginX={"auto"}
                   />

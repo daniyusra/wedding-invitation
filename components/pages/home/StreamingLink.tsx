@@ -6,7 +6,7 @@ const StreamingLink = ({ ...stackProps }: StackProps) => {
   return (
     <BoxTransition w="90%">
         <Stack 
-            bg="#BBBE33"
+            bg="#aa780c"
             borderRadius="20px"
             h="350px"  
             p={'5'}

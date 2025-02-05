@@ -100,7 +100,7 @@ const HomePage = () => {
   };
 
   return (
-    <VStack minH="100vh" justifyContent={"center"} gap={0} overflowX={"hidden"} bg="#183641">
+    <VStack minH="100vh" justifyContent={"center"} gap={0} overflowX={"hidden"} bg="#2d2d2d">
       <InvitationModal isOpen={isOpen} onClose={onClosePlayMusic} name={name} />
       <HomeContent name={name} shortName={shortName} hasPartner={partner} isGroup={isGroup}/>
 

@@ -11,7 +11,7 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
             backgroundImage="/background_timeplace.png" 
             backgroundSize="cover" 
             backgroundPosition="center" 
-            h="580px"
+            h="540px"
             display="flex"
             paddingTop={'45px'}
             alignItems="center"
@@ -21,14 +21,14 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                     style={{
                     display: 'inline-block',
                     width: '100px',       // Adjust line length
-                    borderBottom: '1.5px solid #385A41', // Left line
+                    borderBottom: '1.5px solid #2d2d2d', // Left line
                     marginBottom: '5px',
                     marginRight: '30px' 
                     }}
                 />
                 <span style={{ 
                     fontFamily: "NewSpiritRegular", 
-                    color: '#385A41',
+                    color: '#2d2d2d',
                     fontSize: "20px",
                     display: 'inline-block' 
                 }}>Time</span>
@@ -36,7 +36,7 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                     style={{
                     display: 'inline-block',
                     width: '100px',       // Adjust line length
-                    borderBottom: '1.5px solid #385A41', // Left line
+                    borderBottom: '1.5px solid #2d2d2d', // Left line
                     marginBottom: '5px',
                     marginLeft: '30px' 
                     }}
@@ -46,30 +46,30 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                 fontFamily: "NewSpiritBold",
                 fontSize: '30px',
                 color: 'white'
-            }}>15th February 2025</Text>
+            }}>23rd February 2025</Text>
             <Text color={'white'}>
                 <span style={{ fontFamily: "NewSpiritLight", fontSize: '20px' }}>Akad </span>
                 <span style={{ fontFamily: "NewSpiritMedium", fontSize: '25px' }}>08.00 - 10.00</span>
-                <span style={{ fontFamily: "NewSpiritMedium", fontSize: '25px', color:"#385A41"}}>*</span>
+                <span style={{ fontFamily: "NewSpiritMedium", fontSize: '25px', color:"#2d2d2d"}}>*</span>
             </Text>
             <Text color={'white'} >
                 <span style={{ fontFamily: "NewSpiritLight", fontSize: '20px' }}>Reception </span>
                 <span style={{ fontFamily: "NewSpiritMedium", fontSize: '25px' }}>11.00 - 13.00</span>
             </Text>
-            <Text color={'#385A41'} fontFamily="NewSpiritLight" size="xs">*Only for family members</Text>
+            <Text color={'#2d2d2d'} fontFamily="NewSpiritLight" size="xs">*Only for family members</Text>
             <Box marginTop={'30px'}>
                 <span
                     style={{
                     display: 'inline-block',
                     width: '100px',       // Adjust line length
-                    borderBottom: '1.5px solid #385A41', // Left line
+                    borderBottom: '1.5px solid #2d2d2d', // Left line
                     marginBottom: '5px',
                     marginRight: '30px' 
                     }}
                 />
                 <span style={{ 
                     fontFamily: "NewSpiritRegular", 
-                    color: '#385A41',
+                    color: '#2d2d2d',
                     fontSize: "20px",
                     display: 'inline-block' 
                 }}>Place</span>
@@ -77,7 +77,7 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                     style={{
                     display: 'inline-block',
                     width: '100px',       // Adjust line length
-                    borderBottom: '1.5px solid #385A41', // Left line
+                    borderBottom: '1.5px solid #2d2d2d', // Left line
                     marginBottom: '5px',
                     marginLeft: '30px' 
                     }}
@@ -86,18 +86,24 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
             <Text
                 style={{ 
                     fontFamily: "NewSpiritSemiBold",
-                    fontSize: '32px',
+                    fontSize: '25px',
                     color: 'white'
-            }}>Balai Komando</Text>
+            }}>Rumah H M Ardi/Siti Safura</Text>
             <Text style={{ 
                 fontFamily: "NewSpiritLight",
-                fontSize: '25px',
+                fontSize: '15px',
                 display: 'inline-block',
                 color: 'white'
-            }}>Cijantung, Jakarta Timur</Text>
+            }}>Jl. Agus Salim, Pekan Selesai, Kec. Selesai, </Text>
+                        <Text style={{ 
+                fontFamily: "NewSpiritLight",
+                fontSize: '15px',
+                display: 'inline-block',
+                color: 'white'
+            }}>Kabupaten Langkat, Sumatera Utara 20761 </Text>
             <Button 
                 backgroundColor={'white'} 
-                color={'#385A41'}
+                color={'#2d2d2d'}
                 borderRadius={'20px'}
                 marginTop={'15px'}
                 onClick={() => window.open("https://maps.app.goo.gl/1joNv2hgdRDWZ2NBA", "_blank")}

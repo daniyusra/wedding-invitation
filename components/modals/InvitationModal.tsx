@@ -70,18 +70,18 @@ const InvitationModal = ({ isOpen, onClose, name }: InvitationModalProps) => {
             alignItems="center"
           >
             <Image src="/logo_zd.png"style={{ width: "5em", height: 'auto' }} alt="Logo" marginBottom="4"/>
-            <Text fontSize={"lg"} fontFamily={"NewSpiritRegular"} color={"white"} paddingBottom={'1vh'}>To the one we love,</Text>
-            <Text fontSize={"2xl"} fontFamily={"NewSpiritMedium"} color={"white"}>{name}</Text>
+            <Text fontSize={"lg"} fontFamily={"NewSpiritRegular"} color={"#eaa637"} paddingBottom={'1vh'}>To the one we love,</Text>
+            <Text fontSize={"2xl"} fontFamily={"NewSpiritMedium"} color={"#eaa637"}>{name}</Text>
           </Box>
 
           <IconButton
             icon={<FaArrowDown />}
             aria-label="Scroll Down"
             variant="ghost"
-            color="#DD5D36" 
+            color="#2d2d2d" 
             fontSize="lg"
             borderRadius="50%"
-            backgroundColor="white"
+            backgroundColor="#eaa637"
             padding="3px" 
             animation={!isOpen ? slideToTopFullAnimation : "none"}
             marginTop="2vh" 

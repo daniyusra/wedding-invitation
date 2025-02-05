@@ -9,7 +9,7 @@ const Surah = ({ ...stackProps }: StackProps) => {
   return (
     <BoxTransition w="90%">
       <Stack
-        bg="#385a41"
+        bg="#aa780c"
         p="30px"
         display="flex"
         justifyContent="center"
@@ -41,7 +41,7 @@ const Surah = ({ ...stackProps }: StackProps) => {
           <span
             style={{
               flex: 1, 
-              borderBottom: '1px solid #bbbe32',
+              borderBottom: '1px solid #eaa607',
               marginRight: '30px', 
             }}
           />
@@ -57,7 +57,7 @@ const Surah = ({ ...stackProps }: StackProps) => {
           <span
             style={{
               flex: 1, 
-              borderBottom: '1px solid #bbbe32',
+              borderBottom: '1px solid #eaa607',
               marginLeft: '30px', 
             }}
           />

@@ -8,7 +8,7 @@ const HeaderZD = ({ ...stackProps }: StackProps) => {
 
   return (
     <Box 
-        bg="#183641" w="100%" paddingTop="10px" paddingBottom="10px"
+        bg="#2d2d2d" w="100%" paddingTop="10px" paddingBottom="10px"
         cursor="pointer"
         position="fixed" 
         top="0" 
@@ -27,7 +27,7 @@ const HeaderZD = ({ ...stackProps }: StackProps) => {
             style={{
                 display: 'inline-block',
                 width: '35%', // Ukuran garis kiri
-                borderBottom: '2px solid #bbbe32', // Garis bawah
+                borderBottom: '2px solid #eaa607', // Garis bawah
                 marginBottom: '2px',
             }}
             />
@@ -50,7 +50,7 @@ const HeaderZD = ({ ...stackProps }: StackProps) => {
             style={{
                 display: 'inline-block',
                 width: '35%', 
-                borderBottom: '2px solid #bbbe32', 
+                borderBottom: '2px solid #eaa607', 
                 marginBottom: '2px',
             }}
             />

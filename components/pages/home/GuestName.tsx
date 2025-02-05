@@ -10,7 +10,7 @@ const GuestName = ({ name, ...stackProps }: NamedStackProps) => {
   return (
     <BoxTransition w={"90%"} justifyContent={"center"} alignItems={"center"}>
       <Stack
-        bg="#385a41"
+        bg="#2d2d2d"
         h="200px"
         display="flex"
         justifyContent="center"
@@ -21,14 +21,14 @@ const GuestName = ({ name, ...stackProps }: NamedStackProps) => {
         backgroundPosition="center"
         p={'5'}
       >
-        <Text textAlign="center" fontSize="2xl" color="#385a41">
+        <Text textAlign="center" fontSize="2xl" color="#2d2d2d">
           <span style={{ fontFamily: "NewSpiritLight" }}>Dear </span>
           <span style={{ fontFamily: "NewSpiritBoldItalic" }}>{name}</span>
           <span style={{ fontFamily: "NewSpiritLight" }}>,</span>
         </Text >
           <Text fontSize={'xl'} style={{  
               fontFamily: "NewSpiritLight",
-              color: "#385a41"
+              color: "#2d2d2d"
           }}>we want you to come to </Text>
       </Stack>
     </BoxTransition>
