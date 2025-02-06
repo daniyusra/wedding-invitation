@@ -106,7 +106,7 @@ const TimePlace = ({ ...stackProps }: StackProps) => {
                 color={'#2d2d2d'}
                 borderRadius={'20px'}
                 marginTop={'15px'}
-                onClick={() => window.open("https://maps.app.goo.gl/1joNv2hgdRDWZ2NBA", "_blank")}
+                onClick={() => window.open("https://maps.app.goo.gl/1DoaWBb6R9FYCWnY9", "_blank")}
             >
                 Google Maps 
                 <RiArrowRightLine style={{ marginLeft: "10px" }} />
