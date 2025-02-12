@@ -374,7 +374,7 @@ const WeddingRsvp = ({ displayName, displayShortName, hasPartner, isGroup, ...st
           ref={containerRef}
           onScroll={handleScroll}
         >
-          {data.slice(0, visibleCount).map(
+          {data.map(
             (d: any, i) =>
               d.wishes?.trim() && (
                 <VStack key={i} gap={1} w="full" padding="5">
